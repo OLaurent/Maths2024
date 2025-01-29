@@ -1,0 +1,285 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ProfLycee}
+\useproflyclib{ecritures}
+\usepackage{math-vh}
+% *** Réglage des headers ***
+\fancyhead[L]{2NDE --- Lycée Victor Hugo}
+\fancyhead[R]{O. Laurent --- Année 2024--2025}
+% *** Réglage des headers ***
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Chapitre 10 --- Vecteurs II\par}
+\end{center}
+
+\begin{savoirfaire}{}{}
+    \begin{itemize}[label=$\square$]
+        \item Représenter un vecteur dont on conna\^it les coordonnées.
+        \item Lire les coordonnées d’un vecteur.
+        \item Calculer les coordonnées d’une somme de vecteurs, d’un produit d’un vecteur par un nombre réel.
+        \item Caractériser alignement et parallélisme par la colinéarité de vecteurs.
+        \item Résoudre des problèmes en utilisant la représentation la plus adaptée des vecteurs.
+    \end{itemize}
+\end{savoirfaire}
+
+
+\section{Coordonnées d'un vecteur}
+\begin{definition}{}{}
+  Soit $O$ un point et deux vecteurs $\Vecteur{i}$ et $\Vecteur{j}$ dont les directions sont 
+  perpendiculaires et dont les normes sont égales à 1.
+
+  On dit que $(\Vecteur{i},\Vecteur{j})$ est une \textbf{base orthonormée} du plan 
+  et que $(O;\Vecteur{i},\Vecteur{j})$ est un \textbf{repère orthonormé du plan}.
+\end{definition}
+
+\begin{definition}{}{}
+  Dans une base $(\Vecteur{i},\Vecteur{j})$, soit $\Vecteur{u}$ un vecteur. Il existe un unique couple $(x;y)$ tel que $\Vecteur{u}=x\Vecteur{i}+y\Vecteur{j}$.
+
+
+  $x$ et $y$ sont les coordonnées de $\Vecteur{u}$ dans la base $(\Vecteur{i},\Vecteur{j})$, 
+  notées $\coord{x}{y}$.
+\end{definition}
+
+\begin{example}{}{}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \coordinate (O) at (1,1);
+    \coordinate (I) at (2,1);
+    \coordinate (J) at (1,2);
+    \coordinate (A) at (2,2);
+    \coordinate (B) at (5,4);
+    
+    \draw [very thin, gray] (0,0) grid[step=1] (8,5);
+    
+    \draw[very thick, ->] (1,0) -- (1,5);
+    \draw[very thick, ->] (0,1) -- (8,1);
+    
+   % \draw (A) node[cross=2pt,black]{};
+   % \node[above left] at ($(A)$){$A$};
+   % \draw (B) node[cross=2pt,black]{};
+   % \node[above right] at ($(B)$){$B$};
+    \draw (O) node[cross=2pt,black]{};
+    \node[below left] at ($(O)$){$O$};
+   % \draw (I) node[cross=2pt,black]{};
+   % \node[above left] at ($(I)$){$I$};
+   % \draw (J) node[cross=2pt,black]{};
+   % \node[above left] at ($(J)$){$J$};
+    
+    
+   \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(I)$) node[midway, below] {$\Vecteur{i}$};
+   \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(J)$) node[midway, left] {$\Vecteur{j}$};
+
+
+    \draw[very thick, color=red, ->] ($(A)$) -- ($(B)$) node[midway, above] {$\Vecteur{u}$};
+    \draw[very thick, color=black, dashed, ->] ($(A)$) -- (5,2) node[midway, above, fill=white] {$3\Vecteur{i}$};
+    \draw[very thick, color=black, dashed, ->] (5,2) -- ($(B)$)   node[midway, right, fill=white] {$2\Vecteur{j}$};
+    \end{tikzpicture} 
+  \end{center}
+  \vspace{0.5cm}
+  Dans la base $(\Vecteur{i},\Vecteur{j})$, $\Vecteur{u}$ a ainsi pour coordonnées $\coord{3}{2}$.
+\end{example}
+
+
+\begin{propriete}{Coordonnées d'un vecteur}{}
+  Dans un repère, si deux points $A$ et $B$ ont pour coordonnées respectives $(x_A;y_A)$ et $(x_B;y_B)$, le vecteur $\Vecteur{AB}$ a pour coordonnées $\coord{x_B-x_A}{y_B-y_A}$.
+\end{propriete}
+\begin{demonstration}{}{}
+  Soit $M(x;y)$ le point tel que $\Vecteur{OM}=\Vecteur{AB}$. $ABMO$ est un parallélogramme et $[OB]$ et $[AM]$ ont même milieu.\\Les coordonnées du milieu de $[OB]$ sont $\left(\frac{x_B}{2};\frac{y_B}{2}\right)$.\\Les coordonnées du milieu de $[AM]$ sont $\left(\frac{x_A+x}{2};\frac{y_A+y}{2}\right)$. \\
+  On en déduit que $\frac{x_B}{2}=\frac{x_A+x}{2}$ et $\frac{y_B}{2}=\frac{y_A+y}{2}$, d'où $x=x_B-x_A$ et $y=y_B-y_A$.
+\end{demonstration}
+\vspace{0.5cm}
+\begin{example}{}{}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \coordinate (O) at (1,1);
+    \coordinate (I) at (2,1);
+    \coordinate (J) at (1,2);
+    \coordinate (A) at (2,4);
+    \coordinate (B) at (5,2);
+    
+    \draw [very thin, gray] (0,0) grid[step=1] (8,5);
+    
+    \draw[very thick, ->] (1,0) -- (1,5);
+    \draw[very thick, ->] (0,1) -- (8,1);
+    
+    \draw (A) node[cross=2pt,black]{};
+    \node[above left] at ($(A)$){$A$};
+    \draw (B) node[cross=2pt,black]{};
+    \node[above right] at ($(B)$){$B$};
+    \draw (O) node[cross=2pt,black]{};
+    \node[below left] at ($(O)$){$O$};
+    \draw (I) node[cross=2pt,black]{};
+    % \draw (I) node[cross=2pt,black]{};
+    % \node[above left] at ($(I)$){$I$};
+    % \draw (J) node[cross=2pt,black]{};
+    % \node[above left] at ($(J)$){$J$};
+     
+     
+    \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(I)$) node[midway, below] {$\Vecteur{i}$};
+    \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(J)$) node[midway, left] {$\Vecteur{j}$};
+    
+    
+    \draw[very thick, color=red, ->] ($(A)$) -- ($(B)$);
+    \draw[very thick, color=black, dashed, ->] ($(A)$) -- (5,4) node[midway, above, fill=white] {$x_B-x_A=3$};
+    \draw[very thick, color=black, dashed, ->] (5,4) -- ($(B)$)   node[midway, right, fill=white] {$y_B-y_A=-2$};
+    \end{tikzpicture} 
+  \end{center}
+  \vspace{0.5cm}
+  Sur le graphique ci-dessus, on a : $A(1;3)$ et $B(4;1)$. Les coordonnées du vecteur $\Vecteur{AB}$ sont donc $\coord{4-1}{1-3}$ soit $\Vecteur{AB}=\coord{3}{-2}$
+\end{example}
+\vspace{0.5cm}
+
+
+\begin{propriete}{Caractérisation analytique de l'égalité de deux vecteurs}{}
+  Deux vecteurs sont égaux si et seulement si ils ont les mêmes coordonnées dans un repère du plan.
+
+  Autrement dit, si les vecteurs $\Vecteur{u}\coord{x}{y}$ et $\Vecteur{v}\coord{x'}{y'}$ sont égaux, alors 
+  $x=x'$ et $y=y'$.
+\end{propriete}
+
+\begin{exercices}{}{}
+  80--82 p.139, 83--89 p.140
+\end{exercices}
+
+\begin{methode}{Montrer qu'un quadrilatère $ABCD$ est un parallélogramme}{}
+  \begin{itemize}
+    \item on calcule les coordonnées de $\Vecteur{AB}$ et de $\Vecteur{DC}$.
+    \item on vérifie qu'elles sont égales. 
+  \end{itemize}
+
+
+
+\end{methode}
+
+
+\begin{definition}{}{}
+  Dans un repère orthonormé $(O,I,J)$, soit $\Vecteur{u}$ un vecteur de coordonnées $\coord{x}{y}$.\\
+  La norme du vecteur $\Vecteur{u}$, notée $ \left\lVert \Vecteur{u} \right\rVert$, est 
+  $$ \left\lVert \Vecteur{u} \right\rVert = \sqrt{x^2+y^2} $$ 
+\end{definition}
+
+\begin{definition}{}{}
+  Dans un repère orthonormé $(O,I,J)$, soient $A\CoordPtPl{x_A}{y_A}$ et $B\CoordPtPl{x_B}{y_B}$. Alors :
+  $$ \left\lVert \Vecteur{AB} \right\rVert = \sqrt{(x_B-x_A)^2+(y_B-y_A)^2} $$ 
+\end{definition}
+
+
+\begin{propriete}{Coordonnées de la somme de deux vecteurs}{}
+  Dans un repère, si $\Vecteur{u}\coord{x}{y}$  et $\Vecteur{v}\coord{x'}{y'}$, alors $\Vecteur{u}+\Vecteur{v}\coord{x+x'}{y+y'}$
+\end{propriete}
+
+\begin{demonstration}{}{}
+  \begin{tabular}{p{12cm} p{4cm}}
+    \begin{minipage}{12cm}
+      Dans un repère d'origine $O$, la translation de vecteur $\Vecteur{u}(x;y)$ associe au point $O$ le point $M(x;y)$. La translation de vecteur $\Vecteur{v}(x';y')$ associe au point $M$ le point $N$. Alors, $\Vecteur{u}+\Vecteur{v}=\Vecteur{ON}$.
+      Cherchons les coordonnées de $N$ : \\
+      Les coordonnées de $\Vecteur{MN}$ sont $(x_N-x;y_N-y)$. Or, $\Vecteur{MN}=\Vecteur{v}$, c'est-à-dire $x_N-x=x'$ et $y_N-y=y'$. On en déduit que $N$ a pour coordonnées $(x+x';y+y')$, d'où $\Vecteur{u}+\Vecteur{v}\coord{x+x'}{y+y'}$.
+    \end{minipage}
+    &\begin{minipage}{4cm}
+      \begin{tikzpicture}[scale=1]
+      %Parallelogram ABCD and its diagonals are drawn.
+      \coordinate (O) at (0,0);
+      \coordinate (M) at (1,-1);
+      \coordinate (N) at (2,2);
+      
+      
+      
+      \draw (M) node[cross=2pt,black]{};
+      \draw (N) node[cross=2pt,black]{};
+      \draw (O) node[cross=2pt,black]{};
+      \draw[very thick,color=red,->,shorten >=0.5mm] (O) -- (M);
+      \draw[very thick,color=blue,->,shorten >=0.5mm] (M) -- (N);
+      \draw[very thick,color=green,->,shorten >=0.5mm] (O) -- (N);
+      
+      
+      \draw[very thick,color=black,->] (-1,0) -- (2.5,0);
+      \draw[very thick,color=black,->] (0,-1.5) -- (0,2.5);
+      
+      \node[below left] at ($(M)$){$M$};
+      \node[above right] at ($(N)$){$N$};
+      \node[below left] at ($(O)$){$O$};
+      \node[below left] at ($(O)! 0.5 !(M)$){$\Vecteur{u}$};
+      \node[above left] at ($(M)! 0.5 !(N)$){$\Vecteur{v}$};
+      \node[above left] at ($(O)! 0.5 !(N)$){$\Vecteur{u}+\Vecteur{v}$};
+      
+      
+      
+      \draw[very thick, color=black, dashed, ->] ($(M)$) -- (2,-1) node[midway, below, fill=white] {$x'$};
+      \draw[very thick, color=black, dashed, ->] (2,-1) -- ($(N)$)   node[midway, right, fill=white] {$y'$};
+      
+      
+      \draw[very thick, color=black, dashed] ($(M)$) -- (1,0) node[ above, fill=white] {$x$};
+      \draw[very thick, color=black, dashed] ($(M)$) -- (0,-1) node[ left, fill=white] {$y$};
+      
+      \end{tikzpicture}
+    \end{minipage}
+    \\
+  \end{tabular}
+  
+  
+
+\end{demonstration}
+\vspace{0.5cm}
+
+\begin{example}{}{}
+  Soient $\Vecteur{u}\coord{-3}{5}$  et $\Vecteur{v}\coord{10}{-8}$, alors $\Vecteur{u}+\Vecteur{v}\coord{7}{-3}$
+\end{example}
+
+
+\begin{definition}{Déterminant de deux vecteurs}{}
+Soit $\left(\Vecteur{i},\Vecteur{j}\right)$ une base orthonormée et deux vecteurs $\Vecteur{u}\coord{x}{y}$ et $\Vecteur{v}\coord{x'}{y'}$.
+
+On appelle \textbf{déterminant} de $\Vecteur{u}$ et $\Vecteur{v}$ dans la base $\left(\Vecteur{i},\Vecteur{j}\right)$ le nombre $det\left(\Vecteur{u},\Vecteur{v}\right)=xy'-yx'$, noté également 
+$\begin{vmatrix} 
+  x & x' \\ 
+  y & y' 
+  \end{vmatrix} $
+\end{definition}
+
+\begin{propriete}{}{}
+  Soit $\left(\Vecteur{i},\Vecteur{j}\right)$ une base orthonormée et deux vecteurs $\Vecteur{u}\coord{x}{y}$ et $\Vecteur{v}\coord{x'}{y'}$.
+
+  $\Vecteur{u}$ et $\Vecteur{v}$ sont colinéaires si et seulement si $det\left(\Vecteur{u},\Vecteur{v}\right)=0$.
+\end{propriete}
+
+\begin{demonstrationp}{}{}
+  \begin{itemize}
+    \item Supposons que $\Vecteur{u}$ et $\Vecteur{v}$ sont colinéaires.
+    \begin{itemize}
+      \item Si l'un des deux vecteurs est nul (par exemple $\Vecteur{u}$), alors $det\left(\Vecteur{u},\Vecteur{v}\right)=0\times y'-0 \times x'=0$
+      \item Sinon, il existe un nombre $k$ tel que $\Vecteur{v}=k\Vecteur{x}$, soit $x'=kx$ et $y'=ky$. Alors $det\left(\Vecteur{u},\Vecteur{v}\right)=xy'-yx'=x\times ky-y\times kx=kxy-kxy=0$.
+    \end{itemize}
+
+    \item Réciproquement, supposons que $xy'-yx'=0$.
+    
+    On a alors $xy'=yx'$. 
+    \begin{itemize}
+      \item Si l'un des vecteurs est nul, alors il est nécessairement colinéaire à l'autre.
+      \item Si les deux vecteurs sont non nuls, alors $\Vecteur{u}$ a au moins une coordonnée non nulle, par exemple $x$, donc $x\neq0$.
+        On pose alors $k=\dfrac{x'}{x}$, et on obtient que $xy'=yx' \iff y'=\dfrac{yx'}{x} \iff y'=ky$, car $x\neq 0$.
+
+        Par conséquent, $\Vecteur{v}=k\Vecteur{u}$, et les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont colinéaires.
+    \end{itemize}
+  \end{itemize}
+
+\end{demonstrationp}
+
+\begin{example}{}{}
+
+  Soient dans une base $\Vecteur{u}\coord{12}{-26}$ et $\Vecteur{v}\coord{35}{-72}$.
+
+  Alors $\begin{vmatrix} 
+    12 & 35 \\ 
+    -26 & -72 
+    \end{vmatrix} = 12\times(-72)-(-26)\times 35=46\neq 0$, donc les deux vecteurs ne sont pas colinéaires.
+\end{example}
+
+\begin{exercices}{}{}
+  108--110 p.141, 112--117 p.141, 118--120 p.142
+\end{exercices}
+
+
+  
+\end{document}
