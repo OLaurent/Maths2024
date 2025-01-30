@@ -5,6 +5,8 @@
 #sudo apt-get install texlive-lang-french
 
 sudo cp ./texmf/math-vh.sty /usr/local/texlive/2024/texmf-dist/tex/latex
+sudo cp ./texmf/img/qrcodelogo.png /usr/local/texlive/2024/texmf-dist/tex/latex
+
 sudo texhash
 
 

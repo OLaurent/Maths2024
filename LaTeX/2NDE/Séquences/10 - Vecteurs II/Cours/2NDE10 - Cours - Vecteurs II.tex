@@ -8,15 +8,18 @@
 \fancyhead[R]{O. Laurent --- Année 2024--2025}
 % *** Réglage des headers ***
 
+
+
 \begin{document}
 
 \begin{center}
   {\scshape\LARGE Chapitre 10 --- Vecteurs II\par}
 \end{center}
 
+
 \begin{savoirfaire}{}{}
     \begin{itemize}[label=$\square$]
-        \item Représenter un vecteur dont on conna\^it les coordonnées.
+        \item Représenter un vecteur dont on connait les coordonnées.
         \item Lire les coordonnées d’un vecteur.
         \item Calculer les coordonnées d’une somme de vecteurs, d’un produit d’un vecteur par un nombre réel.
         \item Caractériser alignement et parallélisme par la colinéarité de vecteurs.
@@ -43,42 +46,56 @@
 \end{definition}
 
 \begin{example}{}{}
-  \begin{center}
-    \begin{tikzpicture}[scale=0.8]
-    \coordinate (O) at (1,1);
-    \coordinate (I) at (2,1);
-    \coordinate (J) at (1,2);
-    \coordinate (A) at (2,2);
-    \coordinate (B) at (5,4);
-    
-    \draw [very thin, gray] (0,0) grid[step=1] (8,5);
-    
-    \draw[very thick, ->] (1,0) -- (1,5);
-    \draw[very thick, ->] (0,1) -- (8,1);
-    
-   % \draw (A) node[cross=2pt,black]{};
-   % \node[above left] at ($(A)$){$A$};
-   % \draw (B) node[cross=2pt,black]{};
-   % \node[above right] at ($(B)$){$B$};
-    \draw (O) node[cross=2pt,black]{};
-    \node[below left] at ($(O)$){$O$};
-   % \draw (I) node[cross=2pt,black]{};
-   % \node[above left] at ($(I)$){$I$};
-   % \draw (J) node[cross=2pt,black]{};
-   % \node[above left] at ($(J)$){$J$};
-    
-    
-   \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(I)$) node[midway, below] {$\Vecteur{i}$};
-   \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(J)$) node[midway, left] {$\Vecteur{j}$};
-
-
-    \draw[very thick, color=red, ->] ($(A)$) -- ($(B)$) node[midway, above] {$\Vecteur{u}$};
-    \draw[very thick, color=black, dashed, ->] ($(A)$) -- (5,2) node[midway, above, fill=white] {$3\Vecteur{i}$};
-    \draw[very thick, color=black, dashed, ->] (5,2) -- ($(B)$)   node[midway, right, fill=white] {$2\Vecteur{j}$};
-    \end{tikzpicture} 
-  \end{center}
+ 
   \vspace{0.5cm}
-  Dans la base $(\Vecteur{i},\Vecteur{j})$, $\Vecteur{u}$ a ainsi pour coordonnées $\CoordVecPl{3}{2}$.
+ 
+ \begin{tabular}{cc}
+    \begin{minipage}{0.5\textwidth}
+      \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+        \coordinate (O) at (1,1);
+        \coordinate (I) at (2,1);
+        \coordinate (J) at (1,2);
+        \coordinate (A) at (2,2);
+        \coordinate (B) at (5,4);
+        
+        \draw [very thin, gray] (0,0) grid[step=1] (8,5);
+        
+        \draw[very thick, ->] (1,0) -- (1,5);
+        \draw[very thick, ->] (0,1) -- (8,1);
+        
+       % \draw (A) node[cross=2pt,black]{};
+       % \node[above left] at ($(A)$){$A$};
+       % \draw (B) node[cross=2pt,black]{};
+       % \node[above right] at ($(B)$){$B$};
+        \draw (O) node[cross=2pt,black]{};
+        \node[below left] at ($(O)$){$O$};
+       % \draw (I) node[cross=2pt,black]{};
+       % \node[above left] at ($(I)$){$I$};
+       % \draw (J) node[cross=2pt,black]{};
+       % \node[above left] at ($(J)$){$J$};
+        
+        
+       \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(I)$) node[midway, below] {$\Vecteur{i}$};
+       \draw[very thick, color=ForestGreen, ->] ($(O)$) -- ($(J)$) node[midway, left] {$\Vecteur{j}$};
+    
+    
+        \draw[very thick, color=red, ->] ($(A)$) -- ($(B)$) node[midway, above] {$\Vecteur{u}$};
+        \draw[very thick, color=black, dashed, ->] ($(A)$) -- (5,2) node[midway, above, fill=white] {$3\Vecteur{i}$};
+        \draw[very thick, color=black, dashed, ->] (5,2) -- ($(B)$)   node[midway, right, fill=white] {$2\Vecteur{j}$};
+        \end{tikzpicture} 
+      \end{center}     
+    \end{minipage}&
+    \begin{minipage}{0.5\textwidth}
+      Dans la base $(\Vecteur{i},\Vecteur{j})$, $\Vecteur{u}$ a ainsi pour coordonnées $\CoordVecPl{3}{2}$.
+
+
+      \SimpleQRCode{https://www.youtube.com/watch?v=AdpyGuma3Q8}{2cm}
+      \SimpleQRCode{https://www.youtube.com/watch?v=8PyiMHtp1fE}{2cm}
+    \end{minipage}
+  \end{tabular}
+
+
 \end{example}
 
 
@@ -136,7 +153,6 @@
 \end{example}
 \vspace{0.5cm}
 
-
 \begin{proprieteadm}{Caractérisation analytique de l'égalité de deux vecteurs}{}
   Deux vecteurs sont égaux si et seulement si ils ont les mêmes coordonnées dans un repère du plan.
 
@@ -185,8 +201,12 @@
   \begin{tabular}{p{12cm} p{4cm}}
     \begin{minipage}{12cm}
       Dans un repère d'origine $O$, la translation de vecteur $\Vecteur{u}(x;y)$ associe au point $O$ le point $M(x;y)$. La translation de vecteur $\Vecteur{v}(x';y')$ associe au point $M$ le point $N$. Alors, $\Vecteur{u}+\Vecteur{v}=\Vecteur{ON}$.
-      Cherchons les coordonnées de $N$ : \\
-      Les coordonnées de $\Vecteur{MN}$ sont $(x_N-x;y_N-y)$. Or, $\Vecteur{MN}=\Vecteur{v}$, c'est-à-dire $x_N-x=x'$ et $y_N-y=y'$. On en déduit que $N$ a pour coordonnées $(x+x';y+y')$, d'où $\Vecteur{u}+\Vecteur{v}\CoordVecPl{x+x'}{y+y'}$.
+      
+      Cherchons les coordonnées de $N$ :
+
+      Les coordonnées de $\Vecteur{MN}$ sont $(x_N-x;y_N-y)$. Or, $\Vecteur{MN}=\Vecteur{v}$, c'est-à-dire $x_N-x=x'$ et $y_N-y=y'$.
+      
+      On en déduit que $N$ a pour coordonnées $(x+x';y+y')$, d'où $\Vecteur{u}+\Vecteur{v}\CoordVecPl{x+x'}{y+y'}$.
     \end{minipage}
     &\begin{minipage}{4cm}
       \begin{tikzpicture}[scale=1]
@@ -284,7 +304,10 @@ $\begin{vmatrix}
   Alors $\begin{vmatrix} 
     12 & 35 \\ 
     -26 & -72 
-    \end{vmatrix} = 12\times(-72)-(-26)\times 35=46\neq 0$, donc les deux vecteurs ne sont pas colinéaires.
+    \end{vmatrix} = 12\times(-72)-(-26)\times 35=46\neq 0$.
+
+    $det\left(\Vecteur{u},\Vecteur{v}\right)\neq 0$,
+      donc les deux vecteurs ne sont pas colinéaires.
 \end{example}
 
 \begin{exercices}{}{}
