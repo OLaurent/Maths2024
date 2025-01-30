@@ -27,8 +27,6 @@
     \end{itemize}
 \end{savoirfaire}
 
-
-\section{Coordonnées d'un vecteur}
 \begin{definition}{}{}
   Soit $O$ un point et deux vecteurs $\Vecteur{i}$ et $\Vecteur{j}$ dont les directions sont 
   perpendiculaires et dont les normes sont égales à 1.
@@ -97,7 +95,9 @@
 \end{methode*}
 
 \begin{proprieteadm}{Coordonnées d'un vecteur}{}
-  Dans un repère, si deux points $A$ et $B$ ont pour coordonnées respectives $(x_A;y_A)$ et $(x_B;y_B)$, le vecteur $\Vecteur{AB}$ a pour coordonnées $\CoordVecPl{x_B-x_A}{y_B-y_A}$.
+  Dans un repère, soient $A$ et $B$ deux points ayant pour coordonnées respectives $(x_A;y_A)$ et $(x_B;y_B)$:
+  
+  Le vecteur $\Vecteur{AB}$ a pour coordonnées $\CoordVecPl{x_B-x_A}{y_B-y_A}$. On note $\Vecteur{AB}\CoordVecPl{x_B-x_A}{y_B-y_A}$.
 \end{proprieteadm}
 
 
@@ -224,7 +224,7 @@
       On en déduit que $N$ a pour coordonnées $(x+x';y+y')$, d'où $\Vecteur{u}+\Vecteur{v}\CoordVecPl{x+x'}{y+y'}$.
     \end{minipage}
     &\begin{minipage}{4cm}
-      \begin{tikzpicture}[scale=1]
+      \begin{tikzpicture}[xscale=1.4, yscale=1]
       %Parallelogram ABCD and its diagonals are drawn.
       \coordinate (O) at (0,0);
       \coordinate (M) at (1,-1);
@@ -237,7 +237,7 @@
       \draw (O) node[cross=2pt,black]{};
       \draw[very thick,color=red,->,shorten >=0.5mm] (O) -- (M);
       \draw[very thick,color=blue,->,shorten >=0.5mm] (M) -- (N);
-      \draw[very thick,color=green,->,shorten >=0.5mm] (O) -- (N);
+      \draw[very thick,color=ForestGreen,->,shorten >=0.5mm] (O) -- (N);
       
       
       \draw[very thick,color=black,->] (-1,0) -- (2.5,0);
@@ -246,9 +246,9 @@
       \node[below left] at ($(M)$){$M$};
       \node[above right] at ($(N)$){$N$};
       \node[below left] at ($(O)$){$O$};
-      \node[below left] at ($(O)! 0.5 !(M)$){$\Vecteur{u}$};
-      \node[above left] at ($(M)! 0.5 !(N)$){$\Vecteur{v}$};
-      \node[above left] at ($(O)! 0.5 !(N)$){$\Vecteur{u}+\Vecteur{v}$};
+      \node[red, below left] at ($(O)! 0.5 !(M)$){$\Vecteur{u}$};
+      \node[blue,above left] at ($(M)! 0.5 !(N)$){$\Vecteur{v}$};
+      \node[ForestGreen,above left] at ($(O)! 0.5 !(N)$){$\Vecteur{u}+\Vecteur{v}$};
       
       
       
@@ -289,7 +289,6 @@
 
  \pagebreak
 
- \section{Colinéarité de deux vecteurs}
 \begin{definition}{Déterminant de deux vecteurs}{}
 Soit $\left(\Vecteur{i},\Vecteur{j}\right)$ une base orthonormée et deux vecteurs $\Vecteur{u}\CoordVecPl{x}{y}$ et $\Vecteur{v}\CoordVecPl{x'}{y'}$.
 
@@ -328,18 +327,12 @@ $\begin{vmatrix}
 
 \end{demonstrationp}
 
-\begin{example}{}{}
-
+\begin{methode*}{Vérifier la colinéarité de deux vecteurs}{}
   Soient dans une base $\Vecteur{u}\CoordVecPl{12}{-26}$ et $\Vecteur{v}\CoordVecPl{35}{-72}$.
 
-  Alors $\begin{vmatrix} 
-    12 & 35 \\ 
-    -26 & -72 
-    \end{vmatrix} = 12\times(-72)-(-26)\times 35=46\neq 0$.
-
-    $det\left(\Vecteur{u},\Vecteur{v}\right)\neq 0$,
-      donc les deux vecteurs ne sont pas colinéaires.
-\end{example}
+ 
+  \hfill\SimpleQRCode{https://www.youtube.com/watch?v=MeHOuwy81-8}{1.2cm}
+\end{methode*}
 
 
 \begin{exercices}{}{}
@@ -352,7 +345,7 @@ $\begin{vmatrix}
    Montrer que $(AB)$ et $(CD)$ sont parallèles.
 
 
-   \vspace{5cm}
+   \vspace{4.5cm}
  
    \hfill\SimpleQRCode{https://www.youtube.com/watch?v=hp8v6YAQQRI}{1.2cm}
  \end{methode*}
