@@ -1,0 +1,148 @@
+\documentclass[a4paper]{article}
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{ProfLycee}
+\useproflyclib{ecritures}
+\usepackage{math-vh}
+\usepackage{yhmath}
+% *** Réglage des headers ***
+\fancyhead[L]{1MATHS9 --- Lycée Victor Hugo}
+\fancyhead[R]{O. Laurent --- Année 2023--2024}
+% *** Réglage des headers ***
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Chapitre 6 --- Suites I\par}
+  \vspace{0.5cm}
+\end{center}
+\begin{center}
+  {\LARGE Exercices sur les sens de variation \par}
+  \vspace{0.5cm}
+\end{center}
+
+\begin{exerciceinterro}{}{}
+Déterminer le sens de variation des suites définies ci-dessous:
+\begin{enumerate}
+    \item 			$\begin{cases}
+        u_0 &=-5\\
+        u_{n+1} &=u_n+n+3\\
+\end{cases}$
+\item 			$\begin{cases}
+    v_0 &=1\\
+    v_{n+1} &=v_n(1-v_n)\\
+\end{cases}$
+
+   
+\end{enumerate}
+\end{exerciceinterro}
+
+
+\begin{exerciceinterro}{}{}
+Déterminer le sens de variation des suites suivantes définies de façon explicite:
+\begin{enumerate}
+    \item $u_n=2-4n$
+    \item $v_n=n^2+3$
+    \item $w_n=n^2+2n$
+    \item $t_n=2^n+3^n$
+\end{enumerate}
+
+\end{exerciceinterro}
+\begin{exerciceinterro}{}{}
+    Déterminer le sens de variation de la suite $(u_n)$ définie pour tout entier naturel $n$ par
+    $$u_n=n^2-8n+2$$
+\end{exerciceinterro}
+
+\begin{exerciceinterro}{}{}
+Soit la suite $(u_n)$ définie par:
+$$\begin{cases}
+    u_0 &=1\\
+    u_{n+1} &=\dfrac{u_n}{u_n+1}\\
+\end{cases}$$
+\begin{enumerate}
+    \item A l'aide de la calculatrice, conjecturer le sens de variation de cette suite.
+    \item On admet que tous les termes de cette suite sont positifs. Justifier alors la conjecture obtenue à la question précédente.
+\end{enumerate}
+\end{exerciceinterro}
+
+\begin{exerciceinterro}{}{}
+On considère la suite $(u_n)$ définie par son premier terme et la relation de récurrence:
+$$u_{n+1}=u_n^2-2u_n-3$$
+\begin{enumerate}
+    \item \textbf{Cas où $u_0=3$}
+    \begin{enumerate}
+        \item Calculer $u_1$, $u_2$ et $u_3$.
+        \item Peut-on dire que, $\forall n \in \N, u_n >0$? Justifier la réponse.
+        \item Afficher les valeurs des vingt premiers termes sur la calculatrice.
+        
+        Quel résultat la calculatrice affiche pour $u_{10}$? Expliquer.
+    \end{enumerate}
+    \item \textbf{Cas où $u_0=-2$}
+    
+    Reprendre les mêmes questions.
+\end{enumerate}
+
+\end{exerciceinterro}
+
+\pagebreak
+\begin{exerciceinterro}{}{}
+    On s'intéresse à la suite défine par son premier terme et la relation de récurrence:
+    $$u_{n+1}=-\dfrac{1}{2}u_n^2+u_n+1$$
+    Sur les graphiques ci-dessous, on a représenté la droite $\mathcal{D}$ d'équation $y=x$ ainsi que la courbe $\mathcal{C}_f$ représentant la fonction $f:x\longmapsto -\dfrac{1}{2}x^2+x+1$.
+	
+    \begin{enumerate}
+        \item On choisit dans un premier temps $u_0=-1$. Placer sur l'axe des abscisses les 4 premiers termes de la suite $(u_n)$.
+        \begin{center}
+            \begin{tikzpicture}[x=2cm,y=2cm,%unités
+            xmin=-2,xmax=2,xgrille=1,xgrilles=1, %axe Ox
+            ymin=-2,ymax=2,ygrille=1,ygrilles=1] %axe Oy
+                \GrilleTikz
+                \AxexTikz[Police=\small]{-2,-1,1}
+                \AxeyTikz[Police=\small]{-2,-1,1}
+                \AxesTikz
+    
+    
+                 \def\f{-0.5*\x*\x+\x+1}
+                %toile
+               % \ToileRecurrence[Fct={\f},No=0,Uno=-1, Nb=10,DecalLabel=4pt]
+                %éléments supplémentaires
+                \draw[very thick,blue,domain=-1.7:2,samples=250] plot (\x,{\f}) ;
+                \draw[very thick,CouleurVertForet,domain=-2:2,samples=2] plot (\x,\x) ;
+    
+    
+            \end{tikzpicture}
+        \end{center}
+        \item On choisit maintenant $u_0=0,1$. Placer sur l'axe des abscisses les 5 premiers termes de la suite $(u_n)$.
+           \begin{center}
+            \begin{tikzpicture}[x=5cm,y=5cm,%unités
+            xmin=0,xmax=2,xgrille=0.1,xgrilles=1, %axe Ox
+            ymin=0,ymax=2,ygrille=0.1,ygrilles=1] %axe Oy
+                \GrilleTikz
+                \AxexTikz[Police=\small]{1,2}
+                \AxeyTikz[Police=\small]{1,2}
+                \AxesTikz
+    
+    
+                 \def\f{-0.5*\x*\x+\x+1}
+                %toile
+               % \ToileRecurrence[Fct={\f},No=0,Uno=0.1, Nb=10,DecalLabel=4pt]
+                %éléments supplémentaires
+                \draw[very thick,blue,domain=0:2,samples=250] plot (\x,{\f}) ;
+                \draw[very thick,CouleurVertForet,domain=0:2,samples=2] plot (\x,\x) ;
+    
+    
+            \end{tikzpicture}
+        \end{center}
+
+        Que constate-t-on? Retrouver ce résultat par le calcul.
+
+    \end{enumerate}
+
+	
+\end{exerciceinterro}
+\end{document}
+        
