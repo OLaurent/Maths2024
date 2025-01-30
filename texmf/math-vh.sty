@@ -489,12 +489,33 @@ Bonus: + }{}#1 points}{}%
 
 \newcommand{\SimpleQRCode}[2]{
 	\begin{tikzpicture}
+
+		\draw[line width=4pt, rounded corners=4ex, Blue!50!white, fill=white] (-0.4, -0.4cm) rectangle (#2+0.4cm, #2+0.4cm);
+		\draw[line width=4pt,white, fill=white] (-0.4, +0.4cm) rectangle (#2+0.4cm, #2-0.4cm);
+		\draw[line width=4pt,white, fill=white] (+0.4, -0.4cm) rectangle (#2-0.4cm, #2+0.4cm);
+		\draw[white, fill=white] (+0., -0.cm) rectangle (#2, #2);
+
+
 		\node [anchor=south west,inner sep=0] at (0,0) (QR) {\qrcode[height=#2,level=M]{#1} };
 		\pgfmathsetlength{\imWidth}{\wFrac * #2}
 		\begin{scope}[x={(QR.south east)},y={(QR.north west)}]
 			\draw[fill=white,white] (0.5-\wFrac/2,0.5-\wFrac/2) rectangle (0.5+\wFrac/2,0.5+\wFrac/2);
 			\node [inner sep=0,anchor=south west] at (0.5-\wFrac/2,0.5-\wFrac/2) {\includegraphics[width=\imWidth,height=\imWidth]{qrcodelogo.png}};
 		\end{scope}
+
+	%	\begin{scope}[xshift=-0.2cm, yshift=-0.2cm]
+	%		\draw[line width=4pt] (#2+ 0.4cm, #2) arc (0:90:0.4);
+	%	\end{scope}
+	%	\begin{scope}[xshift=-0.2cm, yshift=+0.2cm]
+	%		\draw[line width=4pt] (#2, -0.4cm) arc (-90:0:0.4);
+	%	\end{scope}
+	%	\begin{scope}[xshift=+0.2cm, yshift=+0.2cm]
+	%		\draw[line width=4pt] (0, -0.4cm) arc (-90:-180:0.4);
+	%	\end{scope}
+	%	\begin{scope}[xshift=+0.2cm, yshift=-0.2cm]
+	%		\draw[line width=4pt] (0, #2+0.4cm) arc (90:180:0.4);
+	%	\end{scope}
+
 	\end{tikzpicture}
 	
 }
