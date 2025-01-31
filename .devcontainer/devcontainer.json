@@ -80,7 +80,7 @@
 							"%DOC%"
 						],
 						"env": {}
-					}
+					},
 					{
 						"name": "pdflatex",
 						"command": "pdflatex",
