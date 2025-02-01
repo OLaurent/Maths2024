@@ -12,4 +12,4 @@ sudo cp ./texmf/img/qrcodelogo.png /usr/local/texlive/2024/texmf-dist/tex/latex
 sudo texhash
 
 
-sudo tlmgr install ntheorem pgf tcolorbox framed etoolbox varwidth tkz-tab proflycee mathtools xkeyval xstring xint poormanlog randomlist simplekv listofitems tabularray hologo fancyvrb xfrac units siunitx fontawesome5 pdfcol tikzfill listings listingsutf8 commalists-tools modulus cancel nicematrix datetime2 enumitem qrcode csquotes lastpage ninecolors interval esvect mleftright pythontex fvextra upquote lineno pgfopts newfloat currfile filehook tabularx
+sudo tlmgr install ntheorem pgf tcolorbox framed etoolbox varwidth tkz-tab proflycee mathtools xkeyval xstring xint poormanlog randomlist simplekv listofitems tabularray hologo fancyvrb xfrac units siunitx fontawesome5 pdfcol tikzfill listings listingsutf8 commalists-tools modulus cancel nicematrix datetime2 enumitem qrcode csquotes lastpage ninecolors interval esvect mleftright pythontex fvextra upquote lineno pgfopts newfloat currfile filehook eurosym babel-french datetime2-french tabularx
