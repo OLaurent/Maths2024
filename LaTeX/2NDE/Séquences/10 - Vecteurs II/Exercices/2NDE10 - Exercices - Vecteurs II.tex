@@ -85,9 +85,9 @@
       \end{center}   
     \end{minipage}&
     \begin{minipage}{10cm}
-      On considère les vecteurs $\Vecteur{u}\CoordVecPl{5}{1}$, $\Vecteur{v}\CoordVecPl{2}{-3}$ et $\Vecteur{w}\CoordVecPl{-3}{4}$.
+      On considère les vecteurs $\Vecteur{u}\CoordVecPl{5}{1}$, $\Vecteur{v}\CoordVecPl{4}{-4}$ et $\Vecteur{w}\CoordVecPl{-3}{4}$.
 
-  Représenter ces vecteurs en choisissant comme origine respectivement les points $A(1;2)$, $B(-2;4)$ et $C(0;1)$.
+  Représenter ces vecteurs en choisissant comme origine respectivement les points $A(1;2)$, $B(-1;5)$ et $C(0;1)$.
     \end{minipage}
     
   \end{tabular}
@@ -186,7 +186,7 @@ Dans chaque cas, déterminer si les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont
       Dans chaque cas, dire si les points $A$, $B$ et $C$ sont alignés ou non.
       \begin{enumerate}
         \item $A(1;3)$, $B(-1;2)$ et $C(2;3)$
-        \item $A(\sqrt{2};3)$, $B(0;1)$ et $C(2\sqrt{2};1)$
+        \item $A(\sqrt{2};3)$, $B(0;1)$ et $C(2\sqrt{2};5)$
       \end{enumerate}
       \end{exercice}
 
@@ -239,13 +239,13 @@ Dans chaque cas, déterminer si les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont
     \begin{exercice}{}{}
     Compléter ce script en Python permettant de déterminer si deux vecteurs sont colinéaires.
       \begin{center}
-        \begin{CodePythontexAlt}[Largeur=0.75\linewidth, Centre, Lignes=false]{}
-          def colineaires(u, v):
-          if u[0]*v[1]==u[1]*v[0]:
+        \begin{CodePythontex}[Largeur=0.75\linewidth, Centre, Lignes=false]{}
+          def vecteurs_colineaires(u, v):
+          if u[......] * v[......] == u[......] * v[......]:
             return True
           else:
             return False
-          \end{CodePythontexAlt}
+          \end{CodePythontex}
       \end{center}
     \end{exercice}
 \end{document}

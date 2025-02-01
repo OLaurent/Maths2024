@@ -1,0 +1,516 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ProfLycee}
+\useproflyclib{ecritures}
+\useproflyclib{pythontex}
+\usepackage{math-vh}
+\usepackage{tabularx}
+% *** Réglage des headers ***
+\fancyhead[L]{2NDE --- Lycée Victor Hugo}
+\fancyhead[R]{O. Laurent --- Année 2024--2025}
+% *** Réglage des headers ***
+
+
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Chapitre 10 --- Vecteurs II --- Exercices corrigés\par}
+\end{center}
+
+\begin{exercice}{(*)}{}
+
+  \begin{tabular}{cc}
+    \begin{minipage}{7cm}
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5,y=1cm,xmin=-4,xmax=7,ymin=-1,ymax=6,
+          xgrille=1,xgrilles=1,ygrille=1,ygrilles=1]
+          \GrilleTikz %grille
+          \AxesTikz %axes
+          \AxeyTikz[AffGrad=false]{}
+    
+          \draw[very thick, ->, Red!50!white] (0,0) -- (1,0) node[midway, below] {$\Vecteur{i}$};
+          \draw[very thick, ->, Red!50!white] (0,0) -- (0,1) node[midway, left] {$\Vecteur{j}$};
+    
+    
+          \draw[very thick, ->, ForestGreen] (-3,1) -- (-1,5) node[midway, above left] {$\Vecteur{v}$};
+          \draw[very thick, ->, Blue] (1,2) -- (6,5) node[midway, above] {$\Vecteur{u}$};
+          \draw[very thick, ->, Red] (3,0) -- (5,0) node[midway, above] {$\Vecteur{w}$};
+        \end{tikzpicture}
+      \end{center}   
+    \end{minipage}&
+    \begin{minipage}{8cm}
+      Par lecture graphique, déterminer les coordonnées dans la base $(\Vecteur{i}, \Vecteur{j})$ des vecteurs $\Vecteur{u}$, $\Vecteur{v}$ et $\Vecteur{w}$ ci-dessous.
+\begin{center}
+
+  \begin{tabularx}{.95\linewidth}{X X X }
+    \textbf{1)} $\Vecteur{u}\CoordVecPl{5}{3}$ & \textbf{2)} $\Vecteur{v}\CoordVecPl{2}{4}$ & 
+    \textbf{3)}  $\Vecteur{w}\CoordVecPl{5}{-3}$\\
+    \end{tabularx}
+\end{center}
+    \end{minipage}
+  \end{tabular}
+
+\end{exercice}
+
+\begin{exercice}{(*)}{}
+  Soient les points $A(x_A;y_A)$ et $B(x_B;y_B)$. Dans chaque cas, déterminer les coordonnées du vecteur $\Vecteur{AB}$.
+  \begin{center}
+    \begin{tabularx}{.95\linewidth}{X X X }
+      \textbf{1)}$A(2;3)$ et $B(5;7)$: $\Vecteur{AB}\CoordVecPl{3}{4}$ & \textbf{2)} $A(-1;4)$ et $B(3;1)$: $\Vecteur{AB}\CoordVecPl{4}{-3}$ & 
+      \textbf{3)} $A(-4;-9)$ et $B(3;-8)$: $\Vecteur{AB}\CoordVecPl{7}{1}$\\
+    \end{tabularx}
+  \end{center}
+\end{exercice}
+
+\begin{exercice}{(*)}{}
+
+  \begin{tabular}{cc}
+    \begin{minipage}{7cm}
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5,y=1cm,xmin=-4,xmax=7,ymin=-1,ymax=6,
+          xgrille=1,xgrilles=1,ygrille=1,ygrilles=1]
+          \GrilleTikz %grille
+          \AxesTikz %axes
+          \AxeyTikz[AffGrad=false]{}
+    
+          \draw[very thick, ->, Red!50!white] (0,0) -- (1,0) node[midway, below] {$\Vecteur{i}$};
+          \draw[very thick, ->, Red!50!white] (0,0) -- (0,1) node[midway, left] {$\Vecteur{j}$};
+    
+    
+          \draw[very thick, ->, ForestGreen] (-1,5) -- (3,1) node[midway, above right] {$\Vecteur{v}$};
+          \draw[very thick, ->, Blue] (1,2) -- (6,3) node[midway, above] {$\Vecteur{u}$};
+          \draw[very thick, ->, Red] (0,1) -- (-3,5) node[midway, above right] {$\Vecteur{w}$};
+
+          \draw (1,2) node{$\bullet$} node[above left]{$A$};
+          \draw (-1,5) node{$\bullet$} node[above right]{$B$};
+          \draw (0,1) node{$\bullet$} node[below]{$C$};
+        \end{tikzpicture}
+      \end{center}   
+    \end{minipage}&
+    \begin{minipage}{10cm}
+      On considère les vecteurs $\Vecteur{u}\CoordVecPl{5}{1}$, $\Vecteur{v}\CoordVecPl{4}{-4}$ et $\Vecteur{w}\CoordVecPl{-3}{4}$.
+
+  Représenter ces vecteurs en choisissant comme origine respectivement les points $A(1;2)$, $B(-1;5)$ et $C(0;1)$.
+    \end{minipage}
+    
+  \end{tabular}
+ 
+ 
+\end{exercice}
+
+\begin{exercice}{(*)}{}
+  Soient les points $E(3;6)$, $H(-5;8)$ et $K(-1;7)$.
+  \begin{enumerate}
+    \item \textit{Montrer que les vecteurs $\Vecteur{EK}$ et $\Vecteur{KH}$ sont égaux.}
+  
+    On calcule les coordonnées de ces vecteurs: $\Vecteur{EK}\CoordVecPl{-1-3}{7-6}$ soit $\Vecteur{EK}\CoordVecPl{-4}{-1}$
+    et $\Vecteur{KH}\CoordVecPl{-5-(-1)}{8-7}$ soit $\Vecteur{KH}\CoordVecPl{-4}{1}$.
+
+    On a bien $\Vecteur{EK}=\Vecteur{KH}$.
+
+    \item \textit{Que peut-on en déduire?}
+    
+    On en déduit d'une part que les points $E$, $K$ et $H$ sont alignés et d'autre part que $EK=KH$.
+
+    $K$ est le milieu du segment $[EH]$.
+  \end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(**)}{}
+ Soient les points $A(2;5)$, $B(-1;3)$, $C(4;-1)$ et $D(7;1)$.
+ \begin{enumerate}
+  \item \textit{Montrer que le quadrilatère $ABCD$ est un parallélogramme.}
+
+  On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{DC}$: $\Vecteur{AB}\CoordVecPl{-1-2}{3-5}$ soit $\Vecteur{AB}\CoordVecPl{-3}{-2}$ et $\Vecteur{DC}\CoordVecPl{4-7}{-1-1}$ soit $\Vecteur{DC}\CoordVecPl{-3}{-2}$.
+
+  On a bien $\Vecteur{AB}=\Vecteur{DC}$, donc $ABCD$ est un parallélogramme.
+
+  \item \textit{Calculer les coordonnées du point $G$ tel que $ABGC$ soit un parallélogramme.}
+  
+  On cherche les coordonnées du point $G(x_G;y_G)$ tel que $\Vecteur{AB}=\Vecteur{CG}$.
+
+  On a $\Vecteur{CG}\CoordVecPl{x_G-4}{y_G+1}$. On a donc le système suivant:
+  $\begin{dcases}
+    x_G-4=-3\\
+    y_G+1=-2
+  \end{dcases} \iff \begin{dcases}
+    x_G=1\\
+    y_G=-3
+  \end{dcases}$. Donc $G(1;-3)$.
+
+
+ \end{enumerate}
+\end{exercice}
+
+\pagebreak
+
+\begin{exercice}{(**)}{}
+Soient les points $A(-4;2)$, $B(1;2)$, $C(-1;6)$, $D(0;-1)$ et $E(5;-1)$ dans le repère orthonormé $\RepereOij$.
+  \begin{enumerate}
+    \item \begin{enumerate}
+      \item \textit{Montrer que le quadrilatère $ABED$ est un parallélogramme.}
+    
+      On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{DE}$: $\Vecteur{AB}\CoordVecPl{1-(-4)}{2-2}$ soit $\Vecteur{AB}\CoordVecPl{5}{0}$ et $\Vecteur{DE}\CoordVecPl{5-0}{-1-(-1)}$ soit $\Vecteur{DE}\CoordVecPl{5}{0}$.
+
+      On a bien $\Vecteur{AB}=\Vecteur{DE}$, donc $ABED$ est un parallélogramme.
+
+      \item \textit{Calculer les longueurs $AB$ et $EB$. Que peut-on en déduire?}
+      
+      On calcule $AB=\sqrt{(1-(-4))^2+(2-2)^2}=\sqrt{5^2}=5$ et $EB=\sqrt{(5-1)^2+(-1-2)^2}=\sqrt{4^2+3^2}=\sqrt{16+9}=\sqrt{25}=5$.
+
+      On a alors $AB=EB$, donc $ABED$ est un losange.
+
+    \end{enumerate}
+    \item \textit{Calculer les coordonnées du point $G$ tel que $ABCG$ soit un parallélogramme.}
+ 
+    On cherche les coordonnées du point $G(x_G;y_G)$ tel que $\Vecteur{AB}=\Vecteur{GC}$.
+
+    On a $\Vecteur{GC}\CoordVecPl{x_G-(-1)}{y_G-6}$. On a donc le système suivant:
+    $\begin{dcases}
+      x_G+1=5\\
+      y_G-6=0
+    \end{dcases} \iff \begin{dcases}
+      x_G=4\\
+      y_G=6
+    \end{dcases}$. Donc $G(4;6)$.
+
+  
+    \item \textit{Le parallélogramme $ABCG$ est-il un losange? Justifier.}
+    
+    On calcule $AB=\sqrt{(1-(-4))^2+(2-2)^2}=\sqrt{5^2}=5$ et $BC=\sqrt{(-1-1)^2+(6-2)^2}=\sqrt{(-2)^2+4^2}=\sqrt{4+16}=\sqrt{20}$.
+
+    On a alors $AB\neq BC$, donc $ABCG$ n'est pas un losange.
+  \end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(**)}{}
+  Soient les points $A(1;2)$, $B(3;-2)$ et les vecteurs $\Vecteur{u}\CoordVecPl{2}{5}$ et $\Vecteur{v}\CoordVecPl{1}{-2}$.
+
+  \begin{enumerate}
+    \item \textit{Calculer les coordonnées du vecteur $\Vecteur{u}+\Vecteur{v}$.}
+    
+    On a $\Vecteur{u}+\Vecteur{v}\CoordVecPl{2+1}{5+(-2)}$ soit $\Vecteur{u}+\Vecteur{v}\CoordVecPl{3}{3}$.
+
+    \item \textit{Calculer les coordonnées des points $E$ et $F$ tels que $\Vecteur{AE}=\Vecteur{u}+\Vecteur{v}$ et $\Vecteur{BF}=\Vecteur{u}+\Vecteur{v}$.}
+
+    On a $\Vecteur{AE}\CoordVecPl{x_E-1}{y_E-2}$ et $\Vecteur{BF}\CoordVecPl{x_F-3}{y_F-(-2)}$.
+
+    On a donc le système suivant:
+    $\begin{dcases}
+      x_E-1=3\\
+      y_E-2=3
+    \end{dcases} \iff \begin{dcases}
+      x_E=4\\
+      y_E=5
+    \end{dcases}$ et $\begin{dcases}
+      x_F-3=3\\
+      y_F+2=3
+    \end{dcases} \iff \begin{dcases}
+      x_F=6\\
+      y_F=1
+    \end{dcases}$.
+
+    Donc $E(4;5)$ et $F(6;1)$.
+  \end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(**)}{}
+  Soient les points $A(-3;2)$, $B(-1;3)$, $C(1;1)$ et $D(9;-1)$.
+
+  Les points $M$ et $N$ sont définis par $\begin{dcases}
+    \Vecteur{AM}=\Vecteur{AB}+\Vecteur{CD} \\
+    \Vecteur{BN}=\Vecteur{BA}+\Vecteur{BC}  
+  \end{dcases}$.
+
+  \begin{enumerate}
+    \item \textit{Calculer les coordonnées des points $M$ et $N$.}
+    
+    On a $\Vecteur{AB}\CoordVecPl{-1-(-3)}{3-2}$ soit $\Vecteur{AB}\CoordVecPl{2}{1}$ et $\Vecteur{CD}\CoordVecPl{9-1}{-1-1}$ soit $\Vecteur{CD}\CoordVecPl{8}{-2}$.
+   
+    On a donc $\Vecteur{AB}+\Vecteur{CD}\CoordVecPl{2+8}{1+(-2)}$ soit $\Vecteur{AB}+\Vecteur{CD}\CoordVecPl{10}{-1}$.
+
+    De même, on a $\Vecteur{BA}\CoordVecPl{-3-(-1)}{2-3}$ soit $\Vecteur{BA}\CoordVecPl{-2}{-1}$ et $\Vecteur{BC}\CoordVecPl{1-(-1)}{1-3}$ soit $\Vecteur{BC}\CoordVecPl{2}{-2}$.
+   
+    On a donc $\Vecteur{BA}+\Vecteur{BC}\CoordVecPl{-2+2}{-1+(-2)}$ soit $\Vecteur{BA}+\Vecteur{BC}\CoordVecPl{0}{-3}$.
+
+
+    On cherche les coordonnées du point $M(x_M;y_M)$ tel que $\Vecteur{AM}=\Vecteur{AB}+\Vecteur{CD}$.
+
+    On a $\Vecteur{AM}\CoordVecPl{x_M-(-3)}{y_M-2}$ soit $\Vecteur{AM}\CoordVecPl{x_M+3}{y_M-2}$. On a donc le système suivant:
+    $\begin{dcases}
+      x_M+3=10\\
+      y_M-2=-1
+    \end{dcases} \iff \begin{dcases}
+      x_M=7\\
+      y_M=1
+    \end{dcases}$. Donc $M(7;1)$.
+
+    De même, on cherche les coordonnées du point $N(x_N;y_N)$ tel que $\Vecteur{BN}=\Vecteur{BA}+\Vecteur{BC}$.
+
+    On a $\Vecteur{BN}\CoordVecPl{x_N-(-1)}{y_N-3}$ soit $\Vecteur{BN}\CoordVecPl{x_N+1}{y_N-3}$. On a donc le système suivant:
+    $\begin{dcases}
+      x_N+1=0\\
+      y_N-3=-3
+    \end{dcases} \iff \begin{dcases}
+      x_N=-1\\
+      y_N=0
+    \end{dcases}$. Donc $N(-1;0)$.
+
+    \item \textit{Montrer que le quadrilatère $ANDM$ est un parallélogramme.}
+    
+    On calcule les coordonnées des vecteurs $\Vecteur{AN}$ et $\Vecteur{MD}$:
+    
+    $\Vecteur{AN}\CoordVecPl{-1-(-3)}{0-2}$ soit $\Vecteur{AN}\CoordVecPl{2}{-2}$ et $\Vecteur{MD}\CoordVecPl{9-7}{-1-1}$ soit $\Vecteur{MD}\CoordVecPl{2}{-2}$.
+
+    On a bien $\Vecteur{AN}=\Vecteur{MD}$, donc $ANDM$ est un parallélogramme.
+
+  \end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(**)}{}
+ Soient les points $A(2;-1)$, $B(3;7)$, $C(-5;1)$ et $K(11;13)$.
+ \begin{enumerate}
+  \item \textit{Calculer les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{BC}$, puis celles du vecteur $-\Vecteur{AB}+2\Vecteur{BC}$.}
+  
+  On a $\Vecteur{AB}\CoordVecPl{3-2}{7-(-1)}$ soit $\Vecteur{AB}\CoordVecPl{1}{8}$, $\Vecteur{BC}\CoordVecPl{-5-3}{1-7}$ soit $\Vecteur{BC}\CoordVecPl{-8}{-6}$.
+
+  On a donc $-\Vecteur{AB}+2\Vecteur{BC}\CoordVecPl{-1+2\times(-8)}{-8+2\times(-6)}$ soit $-\Vecteur{AB}+2\Vecteur{BC}\CoordVecPl{-17}{-20}$.
+  \item \textit{Calculer les coordonnées du point $L$ défini par $\Vecteur{BL}=-\Vecteur{AB}+2\Vecteur{BC}$.}
+  
+  On cherche les coordonnées du point $L(x_L;y_L)$ tel que $\Vecteur{BL}=-\Vecteur{AB}+2\Vecteur{BC}$.
+
+  On a $\Vecteur{BL}\CoordVecPl{x_L-3}{y_L-7}$ et $-\Vecteur{AB}+2\Vecteur{BC}\CoordVecPl{-17}{-20}$.
+
+  On a donc le système suivant:
+  $\begin{dcases}
+    x_L-3=-17\\
+    y_L-7=-20
+  \end{dcases} \iff \begin{dcases}
+    x_L=-14\\
+    y_L=-13
+  \end{dcases}$. Donc $L(-14;-13)$.
+
+  \item \textit{Montrer que le quadrilatère $CKAL$ est un parallélogramme}.
+  
+  On a $\Vecteur{CK}\CoordVecPl{11-(-5)}{13-1}$ soit $\Vecteur{CK}\CoordVecPl{16}{12}$ et $\Vecteur{LA}\CoordVecPl{2-(-14)}{(-1)-(-13)}$ soit $\Vecteur{LA}\CoordVecPl{16}{12}$.
+
+  On a donc $\Vecteur{CK}=\Vecteur{LA}$, donc $CKAL$ est un parallélogramme.
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(*)}{}
+Dans chaque cas, déterminer si les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont colinéaires.
+\begin{center}
+  \begin{tabularx}{.95\linewidth}{X X}
+  \textbf{1)}  $\Vecteur{u}\CoordVecPl{24}{6}$ et $\Vecteur{v}\CoordVecPl{8}{2}$ & \textbf{2)} $\Vecteur{u}\CoordVecPl{20}{-10}$ et $\Vecteur{v}\CoordVecPl{-15}{5}$\\
+  \end{tabularx}
+\end{center}
+
+\begin{enumerate}
+  \item On calcule le déterminant des vecteurs $\Vecteur{u}$ et $\Vecteur{v}$: $det(\Vecteur{u}, \Vecteur{v})=\begin{vmatrix}
+    24 & 8\\
+    6 & 2
+  \end{vmatrix}=24\times 2-6\times 8=48-48=0$.
+  
+  Les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont donc colinéaires car le déterminant est nul.
+
+  \item On calcule le déterminant des vecteurs $\Vecteur{u}$ et $\Vecteur{v}$: $det(\Vecteur{u}, \Vecteur{v})=\begin{vmatrix}
+    20 & -15\\
+    -10 & 5 
+  \end{vmatrix}=20\times 5-(-10)\times(-15)=100-150=-50$.
+
+  Les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ ne sont donc pas colinéaires car le déterminant est non nul.
+
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}{(**)}{}
+  Dans chaque cas, déterminer la valeur du réel $k$ tel que les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ soient colinéaires.
+   \begin{center}
+    \begin{tabularx}{.95\linewidth}{X X}
+    \textbf{1)} $\Vecteur{u}\CoordVecPl{-3}{4}$ et $\Vecteur{v}\CoordVecPl{k}{2}$ & \textbf{2)} $\Vecteur{u}\CoordVecPl{5}{1}$ et $\Vecteur{v}\CoordVecPl{6}{3k}$\\
+    \end{tabularx}
+  \end{center}
+
+  \begin{enumerate}
+    \item On cherche $k$ tel que les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ soient colinéaires.
+    
+    On a $det(\Vecteur{u}, \Vecteur{v})=\begin{vmatrix}
+      -3 & k\\
+      4 & 2 
+    \end{vmatrix}=-3\times 2-4\times k=-6-4k$.
+
+    On cherche donc le réel $k$ tel que $-6-4k=0 \iff -4k=6 \iff k=-\dfrac{6}{4}=-\dfrac{3}{2}$. Les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont donc colinéaires pour $k=-\dfrac{3}{2}$.
+
+    \item On cherche $k$ tel que les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ soient colinéaires.
+
+    On a $det(\Vecteur{u}, \Vecteur{v})=\begin{vmatrix}
+      5 & 6\\
+      1 & 3k
+    \end{vmatrix}=5\times 3k-1\times 6=15k-6$.
+
+    On cherche donc le réel $k$ tel que $15k-6=0 \iff 15k=6 \iff k=\dfrac{6}{15}=\dfrac{2}{5}$. Les vecteurs $\Vecteur{u}$ et $\Vecteur{v}$ sont donc colinéaires pour $k=\dfrac{2}{5}$.
+  \end{enumerate}
+  \end{exercice}
+
+  \begin{exercice}{(**)}{}
+    Dans chaque cas, déterminer si les droites $(AB)$ et $(CD)$ sont parallèles.
+    \begin{enumerate}
+      \item \textit{$A(1;1)$, $B(3;11)$, $C(0;-1)$ et $D(-1;-7)$}
+      
+      On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$: $\Vecteur{AB}\CoordVecPl{3-1}{11-1}$ soit $\Vecteur{AB}\CoordVecPl{2}{10}$ et $\Vecteur{CD}\CoordVecPl{-1-0}{(-7)-(-1)}$ soit $\Vecteur{CD}\CoordVecPl{-1}{-6}$.
+
+      Les droites $(AB)$ et $(CD)$ sont parallèles si et seulement si les vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$ sont colinéaires.
+
+      On a $det(\Vecteur{AB}, \Vecteur{CD})=\begin{vmatrix}
+        2 & -1\\
+        10 & -6
+      \end{vmatrix}=2\times(-6)-10\times(-1)=-12+10=-2$. Comme le déterminant est non nul, les droites $(AB)$ et $(CD)$ ne sont pas parallèles.
+
+
+      
+      \item \textit{$A(3;10)$, $B(0;-5)$, $C(1;-20)$ et $D(10;25)$}
+      
+      On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$: $\Vecteur{AB}\CoordVecPl{0-3}{-5-10}$ soit $\Vecteur{AB}\CoordVecPl{-3}{-15}$ et $\Vecteur{CD}\CoordVecPl{10-1}{25-(-20)}$ soit $\Vecteur{CD}\CoordVecPl{9}{45}$.
+
+      Les droites $(AB)$ et $(CD)$ sont parallèles si et seulement si les vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$ sont colinéaires.
+
+      On a $det(\Vecteur{AB}, \Vecteur{CD})=\begin{vmatrix}
+        -3 & 9\\
+        -15 & 45
+      \end{vmatrix}=-3\times 45-(-15)\times 9=-135+135=0$. Comme le déterminant est nul, les droites $(AB)$ et $(CD)$ sont parallèles.
+
+    \end{enumerate}
+    \end{exercice}
+
+    \begin{exercice}{(**)}{}
+      Dans chaque cas, dire si les points $A$, $B$ et $C$ sont alignés ou non.
+      \begin{enumerate}
+        \item $A(1;3)$, $B(-1;2)$ et $C(2;3)$
+        
+        On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$: $\Vecteur{AB}\CoordVecPl{-1-1}{2-3}$ soit $\Vecteur{AB}\CoordVecPl{-2}{-1}$ et $\Vecteur{AC}\CoordVecPl{2-1}{3-3}$ soit $\Vecteur{AC}\CoordVecPl{1}{0}$.
+
+        Les points $A$, $B$ et $C$ sont alignés si et seulement si les vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$ sont colinéaires.
+
+        On a $det(\Vecteur{AB}, \Vecteur{AC})=\begin{vmatrix}
+          -2 & 1\\
+          -1 & 0
+        \end{vmatrix}=-2\times 0-(-1)\times 1=0+1=1$. Comme le déterminant est non nul, les points $A$, $B$ et $C$ ne sont pas alignés.
+
+        \item $A(\sqrt{2};3)$, $B(0;1)$ et $C(2\sqrt{2};5)$
+        
+        On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$: $\Vecteur{AB}\CoordVecPl{0-\sqrt{2}}{1-3}$ soit $\Vecteur{AB}\CoordVecPl{-\sqrt{2}}{-2}$ et $\Vecteur{AC}\CoordVecPl{2\sqrt{2}-\sqrt{2}}{5-3}$ soit $\Vecteur{AC}\CoordVecPl{\sqrt{2}}{2}$.
+
+        Les points $A$, $B$ et $C$ sont alignés si et seulement si les vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$ sont colinéaires.
+
+        On a $det(\Vecteur{AB}, \Vecteur{AC})=\begin{vmatrix}
+          -\sqrt{2} & \sqrt{2}\\
+          -2 & 2
+        \end{vmatrix}=-\sqrt{2}\times 2-(-2)\times \sqrt{2}=-2\sqrt{2}+2\sqrt{2}=0$. Comme le déterminant est nul, les points $A$, $B$ et $C$ sont alignés.
+         
+      \end{enumerate}
+      \end{exercice}
+
+  \begin{exercice}{(**)}{}
+
+
+  \begin{tabular}{cc}
+    \begin{minipage}{7cm}
+     
+  \begin{center}
+    \begin{tikzpicture}[scale=0.5,y=1cm,xmin=-1,xmax=10,ymin=-4,ymax=5,
+      xgrille=1,xgrilles=1,ygrille=1,ygrilles=1]
+      \GrilleTikz %grille
+      \AxesTikz %axes
+      \AxeyTikz[AffGrad=false]{}
+
+      \draw (1,3) node{$\bullet$} node[above left]{$A$};
+      \draw (9,-1) node{$\bullet$} node[above right]{$B$};
+      \draw (4,-3) node{$\bullet$} node[below]{$C$};
+      \draw[Red] (5,1) node{$\bullet$} node[below]{$D$};
+      \draw[Red] (7,0) node{$\bullet$} node[below]{$E$};
+      
+
+      \draw[very thick, ->, Red!50!white] (0,0) -- (1,0) node[midway, below] {$\Vecteur{i}$};
+      \draw[very thick, ->, Red!50!white] (0,0) -- (0,1) node[midway, left] {$\Vecteur{j}$};
+
+      \draw[Blue] (1,3) -- (4,-3) -- (9,-1) -- cycle;
+
+%      \draw[very thick, ->, ForestGreen] (-3,1) -- (-1,5) node[midway, above left] {$\Vecteur{v}$};
+ %     \draw[very thick, ->, Blue] (1,2) -- (6,5) node[midway, above] {$\Vecteur{u}$};
+  %    \draw[very thick, ->, Red] (0,0) -- (5,3) node[midway, above] {$\Vecteur{w}$};
+    \end{tikzpicture}
+  \end{center}   
+    \end{minipage}&
+    \begin{minipage}{8cm}
+     
+    On considère les points $A(1;3)$, $B(9;-1)$, $C(4;-3)$ dans un repère $\RepereOij$.
+    \begin{enumerate}
+      \item Calculer les coordonnées du milieu $D$ du segment $[AB]$ et celles du milieu $E$ du segment $[DB]$.
+      \item Calculer les coordonnées du point $S$ défini par $\Vecteur{AS}=\dfrac{2}{3}\Vecteur{AC}$.
+      \item Les droites $(EC)$ et $(DS)$ sont-elles parallèles? Justifier.
+    \end{enumerate}
+
+
+    \end{minipage}
+  \end{tabular}
+
+  \begin{enumerate}
+    \item On calcule les coordonnées du milieu $D$ du segment $[AB]$ et celles du milieu $E$ du segment $[DB]$.
+    
+    On a $D(\dfrac{1+9}{2};\dfrac{3+(-1)}{2})$ soit $D(5;1)$ et $E(\dfrac{9+5}{2};\dfrac{-1+1}{2})$ soit $E(7;0)$.
+
+    \item On calcule les coordonnées du point $S$ défini par $\Vecteur{AS}=\dfrac{2}{3}\Vecteur{AC}$.
+    
+    On a $\Vecteur{AC}\CoordVecPl{4-1}{-3-3}$ soit $\Vecteur{AC}\CoordVecPl{3}{-6}$.
+
+    On a $\Vecteur{AS}\CoordVecPl{x_S-1}{y_S-3}$. On a donc le système suivant:
+    $\begin{dcases}
+      x_S-1=\dfrac{2}{3}\times 3\\
+      y_S-3=\dfrac{2}{3}\times (-6)
+    \end{dcases} \iff \begin{dcases}
+      x_S-1=2\\
+      y_S-3=-4
+    \end{dcases} \iff \begin{dcases}
+      x_S=3\\
+      y_S=-1
+    \end{dcases}$. Donc $S(3;-1)$.
+
+    \item Les droites $(EC)$ et $(DS)$ sont parallèles si et seulement si les vecteurs $\Vecteur{EC}$ et $\Vecteur{DS}$ sont colinéaires.
+    
+    On a $\Vecteur{EC}\CoordVecPl{4-7}{-3-0}$ soit $\Vecteur{EC}\CoordVecPl{-3}{-3}$ et $\Vecteur{DS}\CoordVecPl{3-5}{-1-1}$ soit $\Vecteur{DS}\CoordVecPl{-2}{-2}$.
+
+    On a $det(\Vecteur{EC}, \Vecteur{DS})=\begin{vmatrix}
+      -3 & -2\\
+      -3 & -2
+    \end{vmatrix}=-3\times(-2)-(-3)\times(-2)=6-6=0$. Comme le déterminant est nul, les droites $(EC)$ et $(DS)$ sont parallèles.
+
+    
+  \end{enumerate}
+    \end{exercice}
+
+
+    \begin{exercice}{}{}
+    Compléter ce script en Python permettant de déterminer si deux vecteurs sont colinéaires.
+      \begin{center}
+        \begin{CodePythontex}[Largeur=0.75\linewidth, Centre, Lignes=false]{}
+          def vecteurs_colineaires(u, v):
+          if u[0] * v[1] == u[1] * v[0]:
+            return True
+          else:
+            return False
+          \end{CodePythontex}
+      \end{center}
+
+
+      Ce code en Python définit une fonction \texttt{vecteurs\_colineaires} qui vérifie si deux vecteurs sont colinéaires. 
+
+\begin{enumerate}
+    \item \textbf{Définition de la fonction} : La fonction \texttt{vecteurs\_colineaires} prend deux vecteurs \texttt{u} et \texttt{v} comme arguments. Un vecteur est représenté par une liste de deux éléments, par exemple, \texttt{[x, y]}.
+    \item \textbf{Condition de colinéarité} : La fonction vérifie si les vecteurs \texttt{u} et \texttt{v} sont colinéaires en utilisant la condition suivante : \texttt{u[0] * v[1] == u[1] * v[0]}. Cette condition est dérivée de la propriété des vecteurs colinéaires, qui stipule que les vecteurs sont colinéaires si et seulement si le produit croisé de leurs composantes est nul.
+    \item \textbf{Retourne le résultat} : Si la condition est vraie, la fonction retourne \texttt{True}, sinon elle retourne \texttt{False}.
+\end{enumerate}
+
+    \end{exercice}
+\end{document}
