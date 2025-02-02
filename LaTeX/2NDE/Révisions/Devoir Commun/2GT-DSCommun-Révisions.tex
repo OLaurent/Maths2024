@@ -68,7 +68,8 @@
   \\
   \end{tabular}
 
-  \tcblower 
+  \tcblower
+  \vspace{2cm}
   \SimpleQRCode{https://www.youtube.com/watch?v=YTQCtSvxAmM}{1.2cm}
 
 \end{methode*}
@@ -96,7 +97,7 @@
 \end{methode*}
 
 
-\begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}, sidebyside align=bottom]{Calculer les coordonnées du symétrique d'un point $\longrightarrow$ Exercices 1, 4, 6}{}
+\begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}, sidebyside align=top]{Calculer les coordonnées du symétrique d'un point $\longrightarrow$ Exercices 1, 4, 6}{}
 
   \begin{tabular}{cc}
     \begin{minipage}{8cm}
@@ -151,6 +152,7 @@
   \end{tabular}
   \tcblower
   
+  \vspace{2.5cm}
   \SimpleQRCode{https://www.youtube.com/watch?v=XNlkPc1P3_o}{1.2cm}
 
 
@@ -270,7 +272,43 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
   \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Construire un point à partir d'une somme de vecteurs $\longrightarrow$ Exercices 3, 4 et 5}{}
     Soit $ABC$ un triangle. Placer le point $D$ tel que $\Vecteur{AD}=2\Vecteur{AB}+\Vecteur{CB}$.
 
-    \tcblower
+    \begin{enumerate}
+      \item On trace le vecteur $2\Vecteur{AB}$ à partir du point $A$.
+      \item On trace le vecteur à la suite le $\Vecteur{CB}$.
+      \item On place le point $D$ tel que $\Vecteur{AD}=2\Vecteur{AB}+\Vecteur{CB}$.
+    \end{enumerate}
+
+    \begin{center}
+      \begin{tikzpicture}[scale=1]
+        % Points
+        \coordinate [label=above left:$A$] (A) at (0,0);
+        \coordinate [label=above right:$B$] (B) at (3,1);
+        \coordinate [label=below right:$C$] (C) at (4,-2);
+
+        % Triangle
+        \draw (A) -- (B) -- (C) -- cycle;
+
+        % Vecteur 2AB
+        \coordinate (AB2) at ($(A)!2!(B)$);
+        \draw[->, thick, blue] (A) -- (AB2) node[midway, above] {$2\overrightarrow{AB}$};
+
+        % Vecteur CB
+        \coordinate (CB) at ($(C)-(B)$);
+        \draw[->, thick, red] (AB2) -- ++(CB) node[midway, right] {$\overrightarrow{CB}$};
+
+        % Point D
+        \coordinate [label=below left:$D$] (D) at ($(AB2)+(CB)$);
+        \draw[->, thick, green] (A) -- (D) node[midway, below right] {$\overrightarrow{AD}$};
+
+        % Points
+        \filldraw (A) circle (2pt);
+        \filldraw (B) circle (2pt);
+        \filldraw (C) circle (2pt);
+        \filldraw (D) circle (2pt);
+      \end{tikzpicture}
+    \end{center}
+
+        \tcblower
     \SimpleQRCode{https://www.youtube.com/watch?v=nzABUzFM6p8}{1.2cm}
   \end{methode*}
 
