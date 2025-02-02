@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{ProfLycee}
+\usepackage{math-vh}
+
+\usepackage{pst-tree,pst-plot,pst-text,pst-func,pst-math,pst-bspline,pstricks-add,pst-arrow}
+
+% *** Réglage des headers ***
+\fancyhead[L]{TMATHS4 --- Lycée Victor Hugo}
+\fancyhead[R]{O. Laurent --- 3 février 2024}
+% *** Réglage des headers ***
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Interrogation \No5\par}
+  \vspace{0.5cm}
+\end{center}
+
+\NomPrenom{}
+
+\vspace{1cm}
+
+
+
+\begin{exerciceinterro}{\hspace{1cm}/6 points}{}
+  On considère les points $A(-1;1;2)$, $B(1;0;-1)$, $C(0;3;1)$ et $D(-8;2;-3)$.
+  \begin{enumerate}
+    \item Démontrer que les points $A$, $B$ et $C$ définissent bien un plan.
+    \item Démontrer que le vecteur $\overrightarrow{AD}$ est un vecteur normal au plan $(ABC)$.
+    \item Calculer $\overrightarrow{BA}\cdot\overrightarrow{BC}$.
+    \item Calculer les longueurs $BA$ et $BC$.
+    \item En déduire la mesure de l'angler $\widehat{ABC}$.  Arrondir à $0,1$ degré près.
+  \end{enumerate}
+  \end{exerciceinterro}
+
+  \bigskip
+    
+\begin{exerciceinterro}{\hspace{1cm}/4 points}{}
+$ABCD$ est un cube.
+\begin{center}
+  \psset{unit=0.5cm}
+  \begin{pspicture}(-0.5,0)(9.5,7.5)
+
+    \pspolygon[fillcolor=lightgray, fillstyle=solid, linestyle=dashed](8.9,7.2)(4.2,7.2)(6.8,0.5)
+    \psline[fillcolor=lightgray, fillstyle=solid,](8.9,7.2)(6.8,0.5)
+
+
+  % Cube ABCDEFGH
+  \psframe(2,0.5)(6.8,5.2)%ABFE
+  \psline(6.8,0.5)(8.9,2.4)(8.9,7.2)(6.8,5.2)%BCGF
+  \psline(8.9,7.2)(4.2,7.2)(2,5.1)%GHE
+  \psline[linestyle=dashed](2,0.5)(4.2,2.4)(4.2,7.2)%ADH
+  \psline[linestyle=dashed](8.9,2.4)(4.2,2.4)
+  \psdots(2,0.5)(6.8,0.5)(8.9,2.4)(4.2,2.4)%ABCD
+  \uput[dl](2,0.5){E} \uput[d](6.8,0.5){F} \uput[r](8.9,2.4){G} \uput[ul](4.2,2.4){H}
+  \psdots(2,5.2)(6.8,5.2)(8.9,7.2)(4.2,7.2) %EFGH
+  \uput[l](2,5.2){A} \uput[u](6.8,5.2){B} \uput[ur](8.9,7.2){C} \uput[u](4.2,7.2){D}
+
+    
+  \psline[linecolor=red]{}(8.9,2.4)(6.8,5.2)
+\end{pspicture}
+\end{center}
+\begin{enumerate}
+  \item Justifier que la droite $(BG)$ est orthogonale à la droite $(FC)$.
+  \item Démontrer que la droite $(DC)$ est orthogonale au plan $(BCG)$.
+  \item En déduire que la droite $(BG)$ est orthogonale au plan $(DCF)$.
+\end{enumerate}
+  \end{exerciceinterro}
+
+\end{document}
+        
