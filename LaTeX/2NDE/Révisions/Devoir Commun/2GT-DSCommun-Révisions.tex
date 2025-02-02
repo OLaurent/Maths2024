@@ -270,50 +270,57 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
   \setcounter{exercice}{0}
 
   \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Construire un point à partir d'une somme de vecteurs $\longrightarrow$ Exercices 3, 4 et 5}{}
-    Soit $ABC$ un triangle. Placer le point $D$ tel que $\Vecteur{AD}=2\Vecteur{AB}+\Vecteur{CB}$.
-
+   
+   \begin{tabular}{cc}
+    \begin{minipage}{8cm}
+      
+    Soit $ABC$ un triangle. Placer le point $D$ tel que $\Vecteur{BD}=2\Vecteur{AB}+\Vecteur{CB}$.
+ 
     \begin{enumerate}
-      \item On trace le vecteur $2\Vecteur{AB}$ à partir du point $A$.
+      \item On trace le vecteur $2\Vecteur{AB}$ à partir du point $D$.
       \item On trace le vecteur à la suite le $\Vecteur{CB}$.
-      \item On place le point $D$ tel que $\Vecteur{AD}=2\Vecteur{AB}+\Vecteur{CB}$.
+      \item On place le point $D$ tel que $\Vecteur{BD}=2\Vecteur{AB}+\Vecteur{CB}$.
     \end{enumerate}
+    \end{minipage} &
 
+    \begin{minipage}{6cm}
+      
     \begin{center}
-      \begin{tikzpicture}[scale=1]
+      \begin{tikzpicture}[scale=0.8]
         % Points
-        \coordinate [label=above left:$A$] (A) at (0,0);
-        \coordinate [label=above right:$B$] (B) at (3,1);
-        \coordinate [label=below right:$C$] (C) at (4,-2);
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,1);
+        \coordinate (C) at (4,0);
+        \coordinate (D) at (4,4);
 
-        % Triangle
-        \draw (A) -- (B) -- (C) -- cycle;
+        % Triangle ABC
+        \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+        % Vecteur BD
+        \draw[thick,->,blue] (B) -- (D) node[midway, above left] {$\overrightarrow{BD}$};
 
         % Vecteur 2AB
-        \coordinate (AB2) at ($(A)!2!(B)$);
-        \draw[->, thick, blue] (A) -- (AB2) node[midway, above] {$2\overrightarrow{AB}$};
+        \draw[thick,->,red] (B) -- ++(4,2) node[midway, below right] {$2\overrightarrow{AB}$};
 
         % Vecteur CB
-        \coordinate (CB) at ($(C)-(B)$);
-        \draw[->, thick, red] (AB2) -- ++(CB) node[midway, right] {$\overrightarrow{CB}$};
+        \draw[thick,->,green] (6,3) -- ++(-2,1) node[midway, above right] {$\overrightarrow{CB}$};
 
-        % Point D
-        \coordinate [label=below left:$D$] (D) at ($(AB2)+(CB)$);
-        \draw[->, thick, green] (A) -- (D) node[midway, below right] {$\overrightarrow{AD}$};
-
-        % Points
-        \filldraw (A) circle (2pt);
-        \filldraw (B) circle (2pt);
-        \filldraw (C) circle (2pt);
-        \filldraw (D) circle (2pt);
+        % Points labels
+        \node[below left] at (A) {$A$};
+        \node[above left] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+        \node[above] at (D) {$D$};
       \end{tikzpicture}
     \end{center}
+    \end{minipage}
+   \end{tabular}
+  
 
         \tcblower
+        \vspace{2cm}
     \SimpleQRCode{https://www.youtube.com/watch?v=nzABUzFM6p8}{1.2cm}
   \end{methode*}
 
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=nzABUzFM6p8}{Construire un point à partir d'une somme de vecteurs}{}
-  
   \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=fbVrdYiY0qc}{Appliquer la relation de Chasles}{Exercices 4 et 5}
   
   \medskip
