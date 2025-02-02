@@ -19,6 +19,9 @@
 				"stkb.rewrap"
 			],
 			"settings": {
+				"editor.wordWrap": "on",
+				"files.autoSave": "onFocusChange",
+				"files.autoSaveDelay": 150000,
 				"latex-workshop.latex.recipes": [
 					{
 					   "name": "PdfPythonTex",
