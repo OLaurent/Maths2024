@@ -1,0 +1,123 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{ProfLycee}
+\useproflyclib{ecritures}
+\usepackage{math-vh}
+\usepackage{eurosym}
+\usepackage[table]{xcolor}
+
+\usetikzlibrary{matrix,decorations.pathreplacing, calc, positioning,fit}
+
+% *** Réglage des headers ***
+\fancyhead[L]{MEXP -- Lycée Victor Hugo}
+\fancyhead[R]{Année 2024--2025}
+% *** Réglage des headers ***
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Chapitre 5 --- Calcul matriciel --- TD02 \par}
+  \vspace{1.5cm}
+\end{center}
+
+
+\begin{exercice}{}{}
+
+    Dans toute la suite, $M$ désigne la matrice $M=\begin{pmatrix} 5 & 6 & -9 \\ 2 & 1 & -3 \\ 2 & 2 & -4 \end{pmatrix}$ et $I_3$ désigne la matrice identité d'ordre 3.
+
+
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer $M^2 - 3M$ et exprimer cette matrice à l'aide de $I_3$.
+        \item En déduire que la matrice $M$ est inversible et déterminer sa matrice inverse $M^{-1}$ en fonction de $M$ et $I_3$.
+    
+    \end{enumerate}
+
+    \item \begin{enumerate}
+        \item Démontrer par récurrence qu'il existe deux suites de nombres réels $(a_n)_{n \in \mathbb{N}}$ et $(b_n)_{n \in \mathbb{N}}$ telles que, pour tout $n \in \mathbb{N}$, $M^n = a_n M + b_n I_3$. On précisera $a_0$ et $b_0$ et on montrera que $(a_n)$ et $(b_n)$ vérifient:
+    
+        $$\forall n \in \mathbb{N} \quad \begin{cases} a_{n+1} = 3a_n+b_n \\ b_{n+1} = 4 a_n \end{cases}$$
+
+        \item On note, pour tout $n \in \mathbb{N}$, $X_n = \begin{pmatrix} a_n \\ b_n \end{pmatrix}$.
+        
+        Déterminer la matrice $A$ telle que, pour tout $n \in \mathbb{N}$, $X_{n+1} = AX_n$.
+    \end{enumerate}
+    
+    \item \begin{enumerate}
+        \item Soit $P$ la matrice définie par $P = \begin{pmatrix} 1 & -1 \\ 1 & 4 \end{pmatrix}$. Justifier que $P$ est inversible et déterminer $P^{-1}$.
+        \item Calculer $P^{—1}AP$. On note $D$ cette matrice.
+        \item Démontrer que, pour tout $n\in\N$, $A^n=PD^nP^{-1}$.
+        \item En déduire, pour tout $n\in\N$, les expressions de $a_n$ et $b_n$ en fonction de $n$.
+    \end{enumerate}    
+    
+    
+    \item \begin{enumerate}
+        \item Déduire des questions précédentes, pour tout $n\in\N$, l'expression de $M^n$ en fonction de $n$.
+        \item \textit{Application:} On considère trois suites $(u_n)$, $(v_n)$ et $(w_n)$ définies par $u_0=1$, $v_0=0$, $w_0=0$ et, pour tout $n\in\N$ :
+        $$\begin{dcases}
+            u_{n+1}=5u_n+6v_n-9w_n\\
+            v_{n+1}=2u_n+v_n-3w_n\\
+            w_{n+1}=2u_n+2v_n-4w_n\\
+        \end{dcases}$$
+    \end{enumerate}
+\end{enumerate}
+
+\end{exercice}
+
+
+\begin{exercice}{}{}
+
+    \textbf{Partie A:}
+
+    Dans toute cette partie, $A$ désigne une matrice carrée d'ordre 2. On dit qu'un réel $k$ est une \textit{valeur propre} de $A$ si il existe une matrice colonne \underline{non nulle} $X$ de taille $2\times 1$ telle que $AX=kX$. On dit alors que la matrice $X$ est associée à la valeur propre $k$.
+
+    \begin{enumerate}
+        \item \textit{Un exemple}: Dans cette question uniquement, on suppose que $A=\begin{pmatrix} 5 & 2 \\ 3 & 4  \end{pmatrix}$.
+        
+        Calculer $AX$ en prenant $X=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ et en déduire une valeur propre de $A$.
+
+        On suppose à nouveau, dans la suite, que $A$ est une matrice carrée d'ordre $2$ quelconque.
+
+        \item Démontrer que si $k$ est une valeur propre non nulle de $A$ et si $X$ est une matrice associée à $k$ alors, pour tout $n\in\N$, $A^nX=k^nX$.
+        \item Démontrer que si $k$ est une valeur propre de $A$, alors la matrice $A-kI_2$ n'est pas inversible.
+
+        On suppose dans la suite que la réciproque est également vraie.
+
+        \item \begin{enumerate}
+            \item On note dans cette question $A=\begin{pmatrix} a & b \\ c & d  \end{pmatrix}$, où $a$, $b$, $c$ et $d$ sont quatre réels quelconques.
+            
+            Déduire de la question précédente qu'un réel $k$ est une valeur propre de $A$ si et seulement si $k$ est solution de l'équation $x^2-(a+d)x+ad-bc=0$ d'inconnue $x$.
+
+            \item \textit{Application:} Déterminer les valeurs propres de la matrice $A=\begin{pmatrix} -1 & 2 \\ 1 & -1  \end{pmatrix}$.
+            
+            \item Existe-t-il des matrices carrées d'ordre $2$ qui n'admettent pas de valeur propre?
+        \end{enumerate}
+    \end{enumerate}
+
+
+    \textbf{Partie B:}
+
+    Le but de cette partie est de démontrer l'irrationalité de $\sqrt{2}$, c'est-à-dire de prouver qu'il n'existe pas d'entiers $p\in\N$ et $q\in\N^*$ tels que $\sqrt{2}=\dfrac{p}{q}$. Pour cela, on raisonne par l'absurde en supposant 
+    qu'il existe deux entiers $p\in\N$ et $q\in\N^*$ tels que $\sqrt{2}=\dfrac{p}{q}$, c'est-à-dire $p=q\sqrt{2}$.
+
+    Dans toute la suite, on considère les suites $(u_n)$ et $(v_n)$ définies par $u_0=p$, $v_0=q$ et pour tout entier $n\in\N$:
+
+    $$ \begin{dcases}
+        u_{n+1}=-u_n+2v_n \\
+        v_{n+1}=u_n-v_n
+    \end{dcases}$$
+
+    \begin{enumerate}
+        \item Démontrer que, pour tout $n \in \N$, $u_n\in \Z$ et $v_n \in\Z$.
+        \item On note, pour tout $n\in\N$, $X_n=\begin{pmatrix} u_n \\ v_n  \end{pmatrix}$. On a alors, pour tout $n\in \N$, $X_{n+1}=AX_n$, où $A$ est la matrice définie en question \textbf{4.b} de la \textbf{partie A}. Il s'ensuit que pour tout $n\in\N$, $X_n=A^nX_0$.
+            \begin{enumerate}
+                \item Démontrer que $X_0$ est une matrice associée à une des valeurs propres de $A$ que l'on précisera.
+                \item En utilisant la question $2$ de la \textbf{partie A}, en déduire, pour tout entier $n\in\N$, l'expression de $u_n$ en fonction de $n$.
+                \item Justifier qu'il existe un certain rang $N$ tel que $-1 < u_n < 1$ et en déduire que $p=0$.
+            \end{enumerate}
+            \item Conclure.
+    \end{enumerate}
+\end{exercice}
+
+\end{document}
