@@ -175,7 +175,7 @@
             \item Le triangle $ACD$ est-il isocèle en $C$?
             \item Placer dans ce repère les points $E(3;0)$, $F(-2;-1)$ et $G(0;4)$.
             \item Quelles sont les coordonnées des points $P$ et $Q$, milieux respectifs de $[AB]$ et $[DE]$? Placer $P$ et $Q$ sur le repère.
-            \item Soit $K(3;-4)$? Calculer les coordonnées de $G$ pour que $K$ soit le milieu de $[CG]$.
+            \item Soit $K(3;-4)$. Calculer les coordonnées de $G$ pour que $K$ soit le milieu de $[CG]$.
         \end{enumerate}
          
       \end{minipage}
@@ -277,8 +277,8 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     Soit $ABC$ un triangle. Placer le point $D$ tel que $\Vecteur{BD}=2\Vecteur{AB}+\Vecteur{CB}$.
  
     \begin{enumerate}
-      \item On trace le vecteur $2\Vecteur{AB}$ à partir du point $D$.
-      \item On trace le vecteur à la suite le $\Vecteur{CB}$.
+      \item On trace le vecteur $2\Vecteur{AB}$ à partir du point $B$.
+      \item On trace le vecteur $\Vecteur{CB}$ à la suite.
       \item On place le point $D$ tel que $\Vecteur{BD}=2\Vecteur{AB}+\Vecteur{CB}$.
     \end{enumerate}
     \end{minipage} &
@@ -321,45 +321,86 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \SimpleQRCode{https://www.youtube.com/watch?v=nzABUzFM6p8}{1.2cm}
   \end{methode*}
 
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=fbVrdYiY0qc}{Appliquer la relation de Chasles}{Exercices 4 et 5}
+  \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Appliquer la relation de Chasles $\longrightarrow$ Exercices 4 et 5}{}
+  
+    Soient les points $A$, $B$ et $C$. La relation de Chasles s'écrit :
+    $\overrightarrow{A\underline{B}} + \overrightarrow{\underline{B}C} = \overrightarrow{AC}$
+
+    \begin{center}
+      \begin{tikzpicture}
+        % Points
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,1);
+        \coordinate (C) at (4,0);
+
+        % Vecteurs
+        \draw[thick,-{Stealth[scale=1]}] (A) -- (B) node[midway, above left] {$\overrightarrow{AB}$};
+        \draw[thick,-{Stealth[scale=1]}] (B) -- (C) node[midway, above right] {$\overrightarrow{BC}$};
+        \draw[thick,-{Stealth[scale=1]},red] (A) -- (C) node[midway, below] {$\overrightarrow{AC}$};
+
+        % Points labels
+        \node[below left] at (A) {$A$};
+        \node[above] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+      \end{tikzpicture}
+    \end{center}
+    \tcblower
+    \vspace{2cm}
+\SimpleQRCode{https://www.youtube.com/watch?v=fbVrdYiY0qc}{1.2cm}
+  \end{methode*}
   
   \medskip
   
   \begin{exercice}{}{}
   
   A partir de la figure, citer un vecteur:
-  \begin{enumerate}
-    \item dont la norme est égale à $\lVert \overrightarrow{CD} \rVert$.
-    \item de même direction et de même sens que $\overrightarrow{AC}$.
-    \item de même direction que $\overrightarrow{BC}$ mais de sens contraire.
-  \end{enumerate}
-  \begin{center}
-  \begin{tikzpicture}[scale=0.8]
 
-    % Grille
-    \draw[gray, thin] (0,0) grid (11,9);
-    
-    % Vecteurs
-    \draw[-{Stealth[scale=1]}, blue, very thick] (2,5) -- (4,8) node[midway, above left] {$\vec{v}$};
-    \draw[-{Stealth[scale=1]}, violet,very thick] (5,5) -- (5,7) node[midway, right] {$\vec{w}$};
-    \draw[-{Stealth[scale=1]}, orange,very thick] (1,3) -- (2,3) node[midway, below] {$\vec{u}$};
-    \draw[-{Stealth[scale=1]}, red,very thick] (6,6) -- (7,7) node[midway, above left] {$\vec{r}$};
-    \draw[-{Stealth[scale=1]}, gray,very thick] (9,8) -- (7,3) node[midway, above left] {$\vec{s}$};
-    \draw[-{Stealth[scale=1]}, ForestGreen,very thick] (9,8) -- (8,8) node[midway, above] {$\vec{t}$};
-    \draw[-{Stealth[scale=1]}, cyan,very thick] (10,2) -- (9,1) node[midway, below right] {$\vec{p}$};
-    \draw[-{Stealth[scale=1]}, brown,very thick] (10,5) -- (10,4) node[midway, right] {$\vec{m}$};
-    
-    % Points
-    \node[above] at (4,4) {A};
-    \filldraw (4,4) circle (2pt);
-    \node[below] at (2,1) {B};
-    \filldraw (2,1) circle (2pt);
-    \node[below] at (4,1) {C};
-    \filldraw (4,1) circle (2pt);
-    \node[below] at (5,2) {D};
-    \filldraw (5,2) circle (2pt);
-    
-    \end{tikzpicture}
+  \begin{center}
+  \begin{tabular}{cc}
+    \begin{minipage}{7cm}
+  
+  
+      \begin{enumerate}
+        \item de même direction et de même sens que $\overrightarrow{AB}$.
+        \item de même direction que $\overrightarrow{CD}$ mais de sens contraire.
+        \item dont la norme est égale à $\lVert \overrightarrow{CD} \rVert$.
+      \end{enumerate}
+     
+    \end{minipage}&
+    \begin{minipage}{10cm}
+      \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+
+          % Grille
+          \draw[gray, thin] (0,0) grid (11,9);
+          
+          % Vecteurs
+          \draw[-{Stealth[scale=1]}, blue, very thick] (2,5) -- (4,8) node[midway, above left] {$\vec{v}$};
+          \draw[-{Stealth[scale=1]}, violet,very thick] (5,5) -- (5,7) node[midway, right] {$\vec{w}$};
+          \draw[-{Stealth[scale=1]}, orange,very thick] (1,3) -- (2,3) node[midway, below] {$\vec{u}$};
+          \draw[-{Stealth[scale=1]}, red,very thick] (6,6) -- (7,7) node[midway, above left] {$\vec{r}$};
+          \draw[-{Stealth[scale=1]}, gray,very thick] (9,8) -- (7,3) node[midway, above left] {$\vec{s}$};
+          \draw[-{Stealth[scale=1]}, ForestGreen,very thick] (9,8) -- (8,8) node[midway, above] {$\vec{t}$};
+          \draw[-{Stealth[scale=1]}, cyan,very thick] (10,2) -- (9,1) node[midway, below right] {$\vec{p}$};
+          \draw[-{Stealth[scale=1]}, brown,very thick] (10,5) -- (10,4) node[midway, right] {$\vec{m}$};
+          
+          % Points
+          \node[above] at (4,4) {A};
+          \filldraw (4,4) circle (2pt);
+          \node[below] at (2,1) {B};
+          \filldraw (2,1) circle (2pt);
+          \node[below] at (4,1) {C};
+          \filldraw (4,1) circle (2pt);
+          \node[below] at (5,2) {D};
+          \filldraw (5,2) circle (2pt);
+          
+          \end{tikzpicture}
+        \end{center}
+    \end{minipage}\\
+  \end{tabular}
+  \end{center}
+  \begin{center}
+ 
 
     
   \end{center}
@@ -367,30 +408,39 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
   
   \begin{exercice}{}{}
     On considère ci-dessous l'hexagone régulier $ABCDEF$ de centre $G$.
+
     \begin{center}
-
-    \begin{tikzpicture}[scale=1]
-      \draw[ForestGreen, ultra thick] (60*0:2cm) -- (60*0+60:2cm) node[black, above, thick ] {$D$};
-      \draw[ForestGreen, ultra thick] (60*1:2cm) -- (60*1+60:2cm) node[black, above, thick ] {$E$};
-      \draw[ForestGreen, ultra thick] (60*2:2cm) -- (60*2+60:2cm) node[black, left, thick ] {$F$};
-      \draw[ForestGreen, ultra thick] (60*3:2cm) -- (60*3+60:2cm) node[black, below, thick ] {$A$};
-      \draw[ForestGreen, ultra thick] (60*4:2cm) -- (60*4+60:2cm) node[black, below, thick ] {$B$};
-      \draw[ForestGreen, ultra thick] (60*5:2cm) -- (60*5+60:2cm) node[black, right, thick ] {$C$};
-
-
-      \draw[ForestGreen, ultra thick] (60*2+60:2cm) -- (60*5+60:2cm) node[black, left, thick ] {};
-      \draw[ForestGreen, ultra thick] (60*3+60:2cm) -- (60*0+60:2cm) node[black, left, thick ] {};
-      \draw[ForestGreen, ultra thick] (60*4+60:2cm) -- (60*1+60:2cm) node[black, left, thick ] {};
-
-      \draw (0,0.2)node[black, above, thick ] {$G$};
-    \end{tikzpicture}
-  \end{center}
+    \begin{tabular}{cc}
+      \begin{minipage}{7cm}
   
-    \begin{enumerate}
-      \item Citer un vecteur qui a même direction que le vecteur $\overrightarrow{FG}$ mais pas le même sens.
-      \item Citer le représentant d'origine $G$ du vecteur $\overrightarrow{BC}$.
-      \item Citer deux vecteurs égaux au vecteur $\overrightarrow{AF}$.
-    \end{enumerate}
+        \begin{enumerate}
+          \item Citer un vecteur qui a même direction que le vecteur $\overrightarrow{FG}$ mais pas le même sens.
+          \item Citer le représentant d'origine $G$ du vecteur $\overrightarrow{BC}$.
+          \item Citer deux vecteurs égaux au vecteur $\overrightarrow{AF}$.
+        \end{enumerate}
+      \end{minipage}&
+      \begin{minipage}{10cm}
+        \begin{center}
+          \begin{tikzpicture}[scale=1]
+            \draw[ForestGreen, ultra thick] (60*0:2cm) -- (60*0+60:2cm) node[black, above, thick ] {$D$};
+            \draw[ForestGreen, ultra thick] (60*1:2cm) -- (60*1+60:2cm) node[black, above, thick ] {$E$};
+            \draw[ForestGreen, ultra thick] (60*2:2cm) -- (60*2+60:2cm) node[black, left, thick ] {$F$};
+            \draw[ForestGreen, ultra thick] (60*3:2cm) -- (60*3+60:2cm) node[black, below, thick ] {$A$};
+            \draw[ForestGreen, ultra thick] (60*4:2cm) -- (60*4+60:2cm) node[black, below, thick ] {$B$};
+            \draw[ForestGreen, ultra thick] (60*5:2cm) -- (60*5+60:2cm) node[black, right, thick ] {$C$};
+  
+  
+            \draw[ForestGreen, ultra thick] (60*2+60:2cm) -- (60*5+60:2cm) node[black, left, thick ] {};
+            \draw[ForestGreen, ultra thick] (60*3+60:2cm) -- (60*0+60:2cm) node[black, left, thick ] {};
+            \draw[ForestGreen, ultra thick] (60*4+60:2cm) -- (60*1+60:2cm) node[black, left, thick ] {};
+  
+            \draw (0,0.2)node[black, above, thick ] {$G$};
+          \end{tikzpicture}
+        \end{center}
+      \end{minipage}
+  
+    \end{tabular}
+    \end{center}  
   
   \end{exercice}
   
@@ -463,17 +513,53 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \vspace{0.5cm}
   \end{center}
   
+
+  \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Calculer une évolution $\longrightarrow$ Exercices 1, 3, 4, 7 et 8}{}
+     Un article vendu $50$\euro subit une hausse de $20\%$. Quel est son nouveau prix?
+
+     \begin{itemize}
+      \item On calcule le coefficient multiplicateur correspondant à la hausse: $1 + \frac{20}{100} = 1,2$.
+      \item On multiplie le prix initial par ce coefficient: $50$\euro$ \times 1,2 = 60$\euro.
+     \end{itemize}
+    \tcblower
+    %\vspace{2cm}
+    \SimpleQRCode{https://www.youtube.com/watch?v=UVXFEDUnSjI}{1.2cm}
+  \end{methode*}
   
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=UVXFEDUnSjI}{Calculer une évolution}{Exercices 1, 3, 4, 7 et 8 }
-  
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=qOg2eXd8Hv0}{Calculer des taux d'évolutions successifs}{Exercices 3,7 et 8}
-  
-  \MethodeQRCodeVSmall{https://youtu.be/NiCxHYkpNiM}{Calculer un taux d'évolution réciproque}{Exercices 4, 7 et 8}
+
+  \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Calculer des taux d'évolutions successifs $\longrightarrow$ Exercices 3, 7 et 8}{}
+    Un article subit une hausse de $30\%$ puis une baisse de $10\%$. Quel est le taux d'évolution global?
+
+    \begin{itemize}
+     \item Coefficient multiplicateur correspondant à la première évolution: $1 + \frac{30}{100} = 1,3$.
+     \item Coefficient multiplicateur correspondant à la seconde évolution: $1 - \frac{10}{100} = 0,9$.
+     \item On multiplie ces deux coefficients pour obtenir le coefficient global: $1,3 \times 0,9 = 1,17$.
+     
+     Le taux d'évolution global est donc de $17\%$.
+    \end{itemize}
+   \tcblower
+   \vspace{1.1cm}
+   \SimpleQRCode{https://www.youtube.com/watch?v=qOg2eXd8Hv0}{1.2cm}
+ \end{methode*}
+
+ \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Calculer un taux d'évolution réciproque $\longrightarrow$ Exercices 4, 7 et 8}{}
+    Un article subit une hausse de $40\%$. Quel est le taux de réduction à appliquer pour retrouver le prix initial?
+    
+    \begin{itemize}
+      \item Le coefficient multiplicateur correspondant à la hausse est: $1 + \frac{40}{100} = 1,4$.
+      \item Le coefficient multiplicateur réciproque est : $\frac{1}{1,4} \approx 0,7143$.
+      \item Le taux de réduction est donc environ: $1 - 0,7143 = 0,2857 = 28,57\%$.
+    \end{itemize}
+   \tcblower
+   \vspace{1.1cm}
+   \SimpleQRCode{https://www.youtube.com/watch?v=NiCxHYkpNiM}{1.2cm}
+ \end{methode*}
+
   
   \medskip
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   Compléter le tableau suivant:
   
   \begin{center}
@@ -498,10 +584,10 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \end{tabular}
   \end{center}
       
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   
     $200$ salariés d'une entreprise sont répartis suivant trois catégories: ouvriers, techniciens et cadres. L'entreprise 
     compte $120$ femmes selon la répartition suivante:
@@ -527,11 +613,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         \item de techniciens parmi les femmes ?
       \end{enumerate}
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     Dans chaque cas, donner la réponse exacte en justifiant.
     \begin{enumerate}
       \item Dans un lycée, il y a $1380$ élèves, dont $45\%$ de filles. Le nombre de garçons est:
@@ -586,11 +672,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
    
   
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     Dans chaque cas, donner la ou les bonnes réponses en justifiant.
     \begin{enumerate}
       \item Dans une classe de $32$ élèves, 24 élèves ont un vélo. La proportion des élèves ayant un vélo est
@@ -634,11 +720,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
    
   
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   Au sein d'un lycée de $800$ élèves, $276$ lycéens pratiquent du sport dans un club, $12\%$ des lycéens sont inscrits à 
   une fédération sportive scolaire et $9\%$ des lycéens sont inscrits dans un club et à une fédération sportive scolaire.
   \begin{enumerate}
@@ -647,12 +733,12 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \item Déterminer la proportion, en pourcentage, de lycéens pratiquant un sport au sein d'un club ou d'une fédération sportive scolaire.
     \item Déterminer la proportion, en pourcentage, de lycéens ne pratiquant de sport ni au sein d'un club, ni au sein d'une fédération sportive scolaire.
   \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     Dans une grande ville, $78000$ personnes sont inscrites sur les listes électorales.
   
     Lors d'une élection, $57\%$ des personnes inscrites se sont abstenues et $90\%$ des personnes 
@@ -663,12 +749,12 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \item Calculer de deux manières différentes la proportion des suffrages exprimés parmi la totalité des inscrits.
       \item Calculer la proportion, en pourcentage, de bulletins pour le candidat favori parmi les votants, puis parmi les inscrits.
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   
   \medskip
   \pagebreak
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   
     Le tableau ci-dessous donne partiellement la fréquentation du cinéma en France de $2007$ à $2017$, en millions de spectateurs.
   
@@ -690,12 +776,12 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \item Calculer la fréquentation en $2017$ sachant que le taux d'évolution du nombre de spectateurs de $2016$ à $2017$ est de $-1,8\%$.
   \end{enumerate}
   
-  \end{exerciceinterro}
+  \end{exercice}
   
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     \begin{enumerate}
       \item Le prix d'un article subit trois évolutions successives: une hausse de $8\%$, une baisse de $12\%$ et enfin une hausse de $10\%$.
       
@@ -705,7 +791,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       Déterminer l'évolution (en \%) des ventes de l'article qu'il faudrait atteindre de $2018$ à $2019$ pour
       revenir à la même quantité qu'en $2017$.
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   
   \pagebreak
@@ -716,18 +802,104 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \vspace{0.5cm}
   \end{center}
   
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
   
-  \MethodeQRCodeVSmall{https://youtu.be/nwdv78G1kII}{Résoudre graphiquement une équation ou une inéquation}{Exercices 1, 3}
+
+  \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Résoudre graphiquement une équation ou une inéquation $\longrightarrow$ Exercices 1, 3}{}
+    \begin{center}
+      \begin{tabular}{cc}
+        \begin{minipage}{8cm}
+          Résoudre graphiquement l'inéquation $f(x) \leqslant g(x)$:
+          \begin{itemize}
+            \item On repère la partie de la courbe $\mathcal{C}_f$ qui est en dessous de la courbe $\mathcal{C}_g$.
+            \item On lit les abscisses des points de cette partie de la courbe $\mathcal{C}_f$.
+            \item L'ensemble des solutions est $\mathcal{S}=\IntervalleFF{-1}{4}$.
+          \end{itemize}
+        \end{minipage}&
+        \begin{minipage}{7cm}
+          \begin{center}
+            \begin{tikzpicture}[x=.6cm,y=.4cm,%unités
+              xmin=-4,xmax=6,xgrille=1,xgrilles=1, %axe Ox
+              ymin=-1,ymax=9,ygrille=1,ygrilles=1] %axe Oy
+              \GrilleTikz
+              \AxexTikz[Police=\small]{-3,-2,...,5}
+              \AxeyTikz[Police=\small]{1,...,8}
+              \AxesTikz
+              \CourbeTikz[thick,black,samples=250]{0.8*(\x-2)^2}{-1.3:5.3}
+              \CourbeTikz[ultra thick ,red,samples=250]{0.8*(\x-2)^2}{-0.95:4}
+        
+              \CourbeTikz[thick,black,samples=250]{-0.5273*(\x-0.8)^2+8.6}{-3.2:5}
+        
+              \draw (5.5,8.5) node[black, above]{$\mathcal{C}_f$};
+              \draw (2,8.5) node[black, above]{$\mathcal{C}_g$};
+        
+              
+              \draw[thick, black, dashed] (-1,7) -- (-1,0);
+              \draw[thick, black, dashed] (4,3.2) -- (4,0);
+        
+              
+              \draw[line width=1mm, green] (-1,0) -- (4,0);
+        
+              \end{tikzpicture}
+          \end{center}
+        \end{minipage}
+      \end{tabular}
+    \end{center}
+   \tcblower
+   \vspace{2cm}
+   \SimpleQRCode{https://www.youtube.com/watch?v=nwdv78G1kII}{1.2cm}
+ \end{methode*}
+
+
+ \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{Dresser le tableau de signe d'une fonction affine$\longrightarrow$ Exercices 2, 3 et 4}{}
+  Soit $f$ la fonction définie sur $\R$ par $f(x)=2x-3$.
+  \begin{itemize}
+    \item On commence par résoudre l'équation $f(x)=0$: $2x-3=0 \iff x=\frac{3}{2}$. On en déduit que $f$ s'annule en $x=\frac{3}{2}$.
+    \item On dresse le tableau de signe de $f$: $f(x)$ est de la forme $ax+b$, avec $a=2$. On en déduit le tableau de signes:
+    \begin{center}
+      \begin{tikzpicture}
+        \tkzTabInit{$x$ / .5 , signe de $f(x)$ / 1}{$-\infty$, $\frac{3}{2}$, $+\infty$}
+        \tkzTabLine{, -, z, +, }
+      \end{tikzpicture}
+    \end{center}
+    \end{itemize}
+   \tcblower
+   %\vspace{2cm}
+   \SimpleQRCode{https://www.youtube.com/watch?v=zZ9SbX8mC2o}{1.2cm}
+  \end{methode*}
+
+  \begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}]{ Résoudre une inéquation produit $\longrightarrow$ Exercices 2, 3 et 4}{}
+    Résoudre l'inéquation $(x-1)(x+2) \geqslant 0$.
+    
+    \begin{itemize}
+      \item On identifie les termes du produit: $x-1$ et $x+2$. On résout les équations $(x-1)=0$ et $(x+2)=0$. On obtient $x=1$ et $x=-2$.
+      \item On dresse le tableau de signe de chacun des termes puis de $(x-1)(x+2)$, en appliquant la règle des signes pour la dernière ligne:
+      \begin{center}
+          \begin{tikzpicture}
+            \tkzTabInit[lgt=4]{$x$ / .5 , $x-1$ / .5,  $x+2$ / .5, $(x-1)(x+2)$ / .5}{$-\infty$, $-2$, $1$, $+\infty$}
+            \tkzTabLine{,-, t, -, 0 ,+,}
+            \tkzTabLine{,- , z,+ , t ,+,}
+            \tkzTabLine{, +, z, -, z ,+,}
+
+%            \draw[fill=red] (N22) circle(2pt);
+            \draw[red, <->] (N10) to[bend left=20] (N20); 
+            \draw[red, <->] (N30) to[bend left=20] (N40); 
+            \draw[fill=Red!50!white, fill opacity=0.5] (N14) rectangle (N23);
+            \draw[fill=Red!50!white, fill opacity=0.5] (N34) rectangle (N43);
+            
+          \end{tikzpicture}
+      \end{center}
+      \item On en déduit l'ensemble des solutions: $\mathcal{S}=\IntervalleOF{-\infty}{-2} \cup \IntervalleFO{1}{+\infty}$.
+    \end{itemize}
+
+  \tcblower
+  \vspace{4cm}
+  \SimpleQRCode{https://www.youtube.com/watch?v=qoNLr9NkvUE}{1.2cm}
+ \end{methode*}
   
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=zZ9SbX8mC2o}{Dresser un tableau de signe}{Exercices 2, 3 et 4}
+  \pagebreak
   
-  \MethodeQRCodeVSmall{https://www.youtube.com/watch?v=qoNLr9NkvUE}{Résoudre une inéquation produit}{Exercices 2, 3 et 4}
-  
-  
-  \medskip
-  
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   \begin{enumerate}
     \item $f$ est la fonction définie sur $\R$ par $f(x)=x^2-2x-3$. Montrer que $f(x)=(x-1)^2-4$.
     \item  \begin{enumerate}
@@ -742,7 +914,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \item On considère le repère orthonormé du plan ci-dessous. Tracer sur ce repère la courbe $\mathcal{C}_f$ 
       représentative de $f$.
   \begin{center}
-    \begin{tikzpicture}[x=1cm,y=1cm, %unités
+    \begin{tikzpicture}[x=.8cm,y=.8cm, %unités
       xmin=-5.5,xmax=5.5, xgrille=1,xgrilles=0.5, %axe Ox 
       ymin=-5.5,ymax=5.5,ygrille=1,ygrilles=0.5] %axe Oy
       
@@ -766,11 +938,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \item Retrouver le résultat précédent algébriquement.
     \end{enumerate}
   \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   Soit $f$ la fonction définie sur $\R$ par $f(x)=(-2x+5)(x+1)+4(x+1)$.
   \begin{enumerate}
     \item \begin{enumerate}
@@ -793,11 +965,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \item On admet que $-2x^2+7x-3=(x-3)(-2x+1)$. En déduire les deux solutions de l'équation $-2x^2+7x+9=12$.
     \end{enumerate}
   \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
   
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     On considère les deux fonctions affines $f$ et $g$ définies sur $\R$ par $f(x)=-2x+1$ et $g(x)=\dfrac{1}{2}x-1$.
   
     \begin{enumerate}
@@ -816,11 +988,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         \item Trouver le signe de $h$ à l'aide des tableaux de signes des fonctions $f$ et $g$.
       \end{enumerate} 
     \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
   
   \medskip
 
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
   $ABCD$ est un carré de côté $10~cm$; $E$ est un point de $[AB]$.
   
   Les points $E$, $F$, $G$ et $H$ sont placés de telle manière que $AEFG$ et $FICH$ soient des carrés.
@@ -871,7 +1043,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     $$2x^2-20x+42=(2x-6)(x-7)$$
     \item Conclure.
   \end{enumerate}
-  \end{exerciceinterro}
+  \end{exercice}
 
 
 
@@ -885,9 +1057,9 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \vspace{0.5cm}
     \end{center}
   
-    \settcbcounter{exerciceinterro}{0}
+    \setcounter{exercice}{0}
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       Un fabricant produit dans une usine des T-shirts.
     Après la fabrication et la vente de {\bf $x$ centaines} de T-shirts en un mois, le bbénéfice net réalisé en {\bf centaines d'euros} est donné la fonction $B$ représentée ci-dessous.
 
@@ -912,11 +1084,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \item Dresser le tableau de signe de la fonction $B$.
     \item Pour quelle quantité de T-shirts le bénéfice est-il négatif ?
   \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       Un entrepreneur lance sur le marché de nouvelles coques haut de gamme pour les téléphones mobiles.
       
       Sur le graphique ci-dessous sont tracées les courbes représentant les recettes (en trait plein) et les coûts (en pointillés), en fonction du nombre de produits fabriqués exprimé en centaines d'unités.
@@ -986,27 +1158,19 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \end{enumerate}
             
 
-    \end{exerciceinterro}
+    \end{exercice}
   \pagebreak
   
   
   
-  
-
-%TEMPORAIRE
-
-  \end{document}
-
-
-
 \begin{center}
     {\scshape\LARGE Révisions Thème 1 - Repérage - Corrigé\par}
     \vspace{0.5cm}
   \end{center}
 
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
 
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
     On considère le repère ci-dessous:
     \begin{center}
         \begin{tikzpicture}[x=0.7cm,y=0.7cm, %unités
@@ -1091,11 +1255,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         $$
     \end{enumerate}
     
-    \end{exerciceinterro}
+    \end{exercice}
     
     \medskip
     
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
         Dans un repère orthonormé, on donne $A(-2; 3)$, $B(3;2)$ et $C(0;0)$.
     
         \begin{enumerate}
@@ -1110,37 +1274,37 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
             
             De plus, $AC=BC$ donc le triangle est rectangle isocèle en $C$.
         \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
     \medskip
     
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
         $$
         \left\{
             \begin{array}{ll}
-                x_K=\dfrac{x_E+x_G}{2} \\
-                y_K=\dfrac{y_E+y_G}{2}
+                x_I=\dfrac{x_A+x_B}{2} \\
+                y_I=\dfrac{y_A+y_B}{2}
             \end{array}
         \right.\iff
         \left\{
             \begin{array}{ll}
-                x_K=\dfrac{3+4}{2} \\
-                y_K=\dfrac{4-1}{2}
+                x_I=\dfrac{-3+2}{2} \\
+                y_I=\dfrac{\sqrt{2}-\sqrt{2}}{2}
             \end{array}
         \right.\iff
         \left\{
             \begin{array}{ll}
-                x_K=\dfrac{7}{2} \\
-                y_K=\dfrac{3}{2}
+                x_I=-\dfrac{1}{2} \\
+                y_I=0
             \end{array}
         \right.
         $$
 
         Donc $I\left(\dfrac{-1}{2};0\right)$.
         
-    \end{exerciceinterro}
+    \end{exercice}
     
     \medskip
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     
         On appelle $K$ le milieu de $[EG]$.
         $$
@@ -1194,10 +1358,10 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         $$
         Donc $H\left(1;-3\right)$.
 
-    \end{exerciceinterro}
+    \end{exercice}
     
     \medskip
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$ et $C(-6;-4)$.
     \begin{enumerate}
         \item 
@@ -1240,10 +1404,9 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     
     \end{enumerate}
         
-    \end{exerciceinterro}
-    
-    \medskip
-    \begin{exerciceinterro}{}{}
+    \end{exercice}
+    \pagebreak
+    \begin{exercice}{}{}
          Dans le plan muni d'un repère orthonormé $(0;I,J)$, on considère les points $A(-3;0)$, $B(2;1)$, $C(4;3)$ et $D(-1;2)$.
     
          \begin{enumerate}
@@ -1349,7 +1512,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
 
              \item $$AE=\sqrt{(1-(-3))^2+(3-0)^2}=\sqrt{25}=5$$
          \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \pagebreak
 
@@ -1359,19 +1522,19 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \vspace{0.5cm}
   \end{center}
 
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
 
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
 
     \begin{enumerate}
-      \item $\overrightarrow{r}$ a une norme est égale à $\lVert \overrightarrow{CD} \rVert$.
-      \item $\overrightarrow{m}$ a la même direction et le même sens que $\overrightarrow{AC}$.
-      \item $\overrightarrow{t}$ a la même direction que $\overrightarrow{BC}$ mais pas le même sens.
+      \item $-\overrightarrow{v}$ a même direction et même sens que $\lVert \overrightarrow{AB} \rVert$.
+      \item $\overrightarrow{p}$ a la même direction que $\overrightarrow{CD}$ mais pas le même sens.
+      \item $\overrightarrow{r}$ a la même norme que $\overrightarrow{CD}$ mais pas le même sens.
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
     
 \medskip
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     
       \begin{enumerate}
         \item $\overrightarrow{DE}$, $\overrightarrow{CG}$, $\overrightarrow{CF}$, $\overrightarrow{GF}$, $\overrightarrow{BA}$ 
@@ -1380,21 +1543,23 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         \item $\overrightarrow{BG}$, $\overrightarrow{GE}$, $\overrightarrow{CD}$ sont des vecteurs égaux au vecteur $\overrightarrow{AF}$.
       \end{enumerate}
     
-    \end{exerciceinterro}
+    \end{exercice}
     \medskip
     
     
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
           \begin{enumerate}
             \item $\overrightarrow{IP}$ est un vecteur égal à $\overrightarrow{IJ}+2\overrightarrow{JN}$.
             \item $\overrightarrow{IK}$, $\overrightarrow{JL}$, $\overrightarrow{OM}$, sont des vecteurs égaux à $2\overrightarrow{IO}+2\overrightarrow{QN}$.
             \item $\overrightarrow{IM}$ est un vecteur égal à $\dfrac{2}{3}\overrightarrow{IL}+\dfrac{1}{2}\overrightarrow{OR}$.
             \item $\overrightarrow{LK}$ est un vecteur égal à $-\dfrac{1}{3}\overrightarrow{RL}-\dfrac{1}{2}\overrightarrow{OR}$.
           \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
     
 \medskip
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
+      $~$
+
      \begin{enumerate}
       \item 
       \begin{center}
@@ -1439,10 +1604,10 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
          On en conclut donc que $\overrightarrow{MB}=\overrightarrow{DN}$.
          \item $\overrightarrow{MB}=\overrightarrow{DN}$ donc $DNBM$ est un parallélogramme.
      \end{enumerate}        
-    \end{exerciceinterro}
+    \end{exercice}
     \medskip
 
-\begin{exerciceinterro}{}{}
+\begin{exercice}{}{}
       Soit un triangle quelconque $ABC$ et les points $D$ et $E$ tels que:
      $$\overrightarrow{AD}=\dfrac{1}{4}\overrightarrow{AC}$$
     $$\overrightarrow{AE}=\dfrac{1}{4}\overrightarrow{AB}$$
@@ -1455,7 +1620,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \end{enumerate}  
     
         
-    \end{exerciceinterro}
+    \end{exercice}
     
     
     \pagebreak
@@ -1467,10 +1632,10 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \vspace{0.5cm}
   \end{center}
 
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
 
-  \begin{exerciceinterro}{}{}
-
+  \begin{exercice}{}{}
+$~$
     \begin{center}
       \begin{tabular}{|c|c|c|c|}
         \hline 
@@ -1506,14 +1671,14 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       
       $1,237=1+\dfrac{t}{100} \iff 0,237=\dfrac{t}{100} \iff t=100\times 0,237=23,7$. $V_{initiale}\times 1,237 = 11 \iff V_{initiale}= \dfrac{11}{1,237}\approx 8,89$ 
       \item Une augmentation de $7,3\%$  revient à multiplier le prix initial par  $1+\dfrac{7,3}{100}=1,073$, et $4\times 1,073=4,292$
-      \item $CM=\dfrac{V_{finale}}{V_{initiale}}=\dfrac{132}{123}\approx 1,073$/
-      \item $CM=\dfrac{V_{finale}}{V_{initiale}}=\dfrac{9,5}{11}\approx 0,863$/
+      \item $CM=\dfrac{V_{finale}}{V_{initiale}}=\dfrac{132}{123}\approx 1,073$.
+      \item $CM=\dfrac{V_{finale}}{V_{initiale}}=\dfrac{9,5}{11}\approx 0,863$.
     \end{itemize}
-  \end{exerciceinterro}
+  \end{exercice}
     
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
 
       \begin{enumerate}
         \item  Il y a $114$ ouvriers, dont $78$ de femmes, il y a donc $114-78=36$ hommes ouvriers.
@@ -1559,11 +1724,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         
       \end{enumerate}
    
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       \begin{enumerate}
         \item $C$ : Il y a $45\%$ de filles donc $55\%$ de garçons et $\dfrac{55}{100}\times 1380=759$.
         \item $B$ : $\dfrac{80}{100}\times \dfrac{3}{4}=\dfrac{240}{400}=\dfrac{60}{100}$.
@@ -1584,9 +1749,9 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         Il s'agit donc d'une diminution de $45\%$.
         
      \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     \begin{enumerate}
       \item $A-B-C-D$ : $\dfrac{24}{32}=\dfrac{3}{4}=0,75=\dfrac{75}{100}$.
       \item $B-C$ : Augmenter une longueur $d$ de $20\%$ revient à la multiplier par $1+\dfrac{20}{100}=1,2$.
@@ -1602,11 +1767,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       
       Le coefficient multiplicateur réciproque est donc $\dfrac{1}{0,96}\approx1,0417$. Cela correspond à une augmentation de $4,17\%$ environ.
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     \begin{enumerate}
       \item $p=\dfrac{276}{800}=0,345$.
 
@@ -1629,11 +1794,11 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \item On en conclut par complémentarité que $100\%-37,5\%=62,5\%$ des lycéens ne pratiquent pas 
       de sport ni au sein d'un club ni au sein d'une fédération sportive.
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     \begin{enumerate}
       \item $57\%$ des inscrits se sont abstenus, donc $43\%$ ont voté.
 
@@ -1649,12 +1814,12 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
 
 
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
 
     \medskip 
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       \begin{enumerate}
         \item  Le coefficient multiplicateur entre $2007$ et $2008$ est $1+\dfrac{7,7}{100}=1,077$.
         
@@ -1676,7 +1841,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
 
 
       \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
@@ -1705,9 +1870,9 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
     \vspace{0.5cm}
   \end{center}
 
-  \settcbcounter{exerciceinterro}{0}
+  \setcounter{exercice}{0}
 
-  \begin{exerciceinterro}{}{}
+  \begin{exercice}{}{}
 \begin{enumerate}
   \item $(x-1)^2-4=x^2-2x+1-4=x^2-2x-3=f(x)$
   \item \begin{enumerate}
@@ -1766,10 +1931,10 @@ Par conséquent, les solutions sont $0$ et $4$.
 
 \end{enumerate}
         
-    \end{exerciceinterro}
+    \end{exercice}
     
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       \begin{enumerate}
         \item \begin{enumerate}
           \item $f(x)=(-2x+5)(x+1)+4(x+1)=(x+1)\left[ (-2x+5) + 4 \right]=(x+1)(-2x+9)$
@@ -1806,11 +1971,11 @@ Par conséquent, les solutions sont $0$ et $4$.
         \end{enumerate}
       \end{enumerate}
 
-    \end{exerciceinterro}
+    \end{exercice}
     
 
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     \begin{enumerate}
       \item \begin{enumerate}
         \item $f(\dfrac{1}{2})=-2\times \dfrac{1}{2}+1=-1+1=0$, donc l'image de $\dfrac{1}{2}$ est $0$.
@@ -1868,10 +2033,10 @@ Par conséquent, les solutions sont $0$ et $4$.
       \end{center}
     \end{enumerate}
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
       \begin{enumerate}
         \item $x\in[0;10]$
         \item On a $AE=x$ et $EB=FI=10-x$.
@@ -1898,7 +2063,7 @@ Par conséquent, les solutions sont $0$ et $4$.
 
           Pour que l'aire colorée soit inférieure à $58~cm^2$, la distance $AE$ doit être comprise entre $3~cm$ et $7~cm$.
       \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \pagebreak
 
@@ -1907,9 +2072,9 @@ Par conséquent, les solutions sont $0$ et $4$.
       \vspace{0.5cm}
     \end{center}
   
-    \settcbcounter{exerciceinterro}{0}
+    \setcounter{exercice}{0}
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
      \begin{enumerate}
       \item \begin{enumerate}
         \item L'ensemble de définition de la fonction $B$ est $[0 ; 100]$.
@@ -1933,11 +2098,11 @@ Par conséquent, les solutions sont $0$ et $4$.
       \tkzTabLine{, -, z, +, z, - ,}
    \end{tikzpicture}
      \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 
     \medskip
 
-    \begin{exerciceinterro}{}{}
+    \begin{exercice}{}{}
     
       {\bf Partie I}
     \begin{enumerate}
@@ -1975,6 +2140,6 @@ Par conséquent, les solutions sont $0$ et $4$.
       \item Le bénéfice est maximal pour 350 coques vendues. Ce bénéfice s'élève à 106,375 milliers d'euros.
 
     \end{enumerate}
-    \end{exerciceinterro}
+    \end{exercice}
 \end{document}
         
