@@ -1,0 +1,408 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{ProfLycee}
+\usepackage{math-vh}
+\usepackage{tabularx}
+\usepackage{eurosym}
+\usepackage{pst-plot,pst-tree,pstricks,pst-node,pst-text}
+\usepackage{FenetreCas}
+
+% *** Réglage des headers ***
+\fancyhead[L]{TMATHS4/TMATHS2 --- Lycée Victor Hugo}
+\fancyhead[R]{20 janvier 2024}
+% *** Réglage des headers ***
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Devoir surveillé \No4\par}
+  \vspace{0.5cm}
+\end{center}
+
+\NomPrenom{}
+\medskip
+
+\begin{exerciceinterro}{\hspace{2cm}/8 points}{}
+\textbf{Partie A} :
+
+\medskip
+
+Soit $g$ la fonction définie sur $[0;+\infty[$ par $g(x)=(2-x)e^x+1$.
+
+\begin{enumerate}
+	\item \textit{Donner la valeur exacte de $g(0)$ et $g(1)$.}
+	
+	On a $g(0)=(2-0)e^0+1=2+1=3$ et $g(1)=(2-1)e^1+1=1+e$.
+	
+
+
+
+	\item \textit{Calculer $\lim\limits_{x \to +\infty} g(x)$}.
+	
+	On a $\lim\limits_{x \to +\infty} 2-x=-\infty$ par somme donc $\lim\limits_{x \to +\infty} (2-x)e^x=-\infty$ par produit 
+puis:
+$$\lim\limits_{x \to +\infty} g(x)=-\infty$$
+
+
+
+
+	\item \begin{enumerate}
+		\item \textit{Calculer $g'(x)$ pour tout $x$ dans $[0;+\infty[$.}
+		
+		Pour tout $x\in[0;+\infty[$:
+
+		$$g'(x)=-1\times e^x+(2-x)e^x=(1-x)e^x$$
+		
+
+
+
+
+		\item \textit{En déduire le tableau de variations de la fonction $g$ }.
+	
+		On sait d'après la question précédente que pour tout $x\in[0;+\infty[$$g'(x)$ est du signe de $1-x$, donc le tableau de variations de $g$ est:
+
+		\begin{center}
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $x-1$ / 1, $g'(x)$ / 1, $g(x)$ / 1.5}{$0$, $1$, $+\infty$}
+			\tkzTabLine{, +, z, -, }
+			\tkzTabLine{, +, z, -, }
+			\tkzTabVar{-/ $3$ , +/ $1+e$, -/ $-\infty$}
+		 \end{tikzpicture}
+		\end{center}
+		
+	\end{enumerate}	
+	\item \begin{enumerate}
+		\item \textit{Démontrer que l'équation $g(x)=0$ admet une unique solution $\alpha$ sur $[0;+\infty[$.}
+
+		D'après le tableau de variation: pour tout $x\in[0;1]$, $g(x)>0$, donc l'équation $g(x)=0$ n'admet pas de solution sur l'intervalle $[0;1]$.
+
+		\begin{itemize}
+			\item La fonction $g$ est continue comme produit et somme de fonctions continues.
+			\item  $g$ est stricement décroissante sur $[1;+\infty[$.
+			\item $g(1)=1+e$ et $\lim\limits_{x \to +\infty} g(x)=-\infty$, donc $0\in]-\infty;1+e]$.
+		\end{itemize}
+
+		D'après le théorème des valeurs intermédiaires, l'équation $g(x)=0$ admet une unique solution sur $[1;+\infty[$, donc sur $[0;+\infty[$ d'après ce qui précède.
+		
+		\item \textit{Compléter le programme Python suivant pour que l'appel $encadrement()$ renvoie les deux bornes d'un 
+		encadrement de $\alpha$ d'amplitude inférieure à $0,01$.}
+\begin{center}
+\begin{CodePythonLst}*[Largeur=8cm]{}
+def f(x):
+    return (2-x)*exp(x)+1
+
+def encadrement():
+    a=0,b=3	
+    while (b-a) > 0.01 :
+        m=(a+b)/2
+        if f(a)*f(m) > 0:
+            a = m
+        else:
+            b = m
+    return a,b
+\end{CodePythonLst}
+\end{center}
+
+\item \textit{\`A l'aide de la calculatrice, déterminer un encadrement d'amplitude $10^{-2}$ de $\alpha$.}
+
+On obtient à la calculatrice $2,12 \leqslant \alpha \leqslant 2,13$.
+
+\item \textit{Donner, sans justification, le tableau de signe de $g(x)$.}
+
+$g$ s'annule en $\alpha$ donc 
+
+\begin{center}
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $g(x)$ / 1}{$0$, $\alpha$, $+\infty$}
+		\tkzTabLine{, +, z, -, }
+	\end{tikzpicture}
+	\end{center}
+
+
+	\end{enumerate}
+\end{enumerate}
+
+\medskip
+\textbf{Partie B} :
+
+Soit $f$ la fonction définie et dérivable sur $[0;+\infty[$ par $f(x)=\dfrac{x-1}{e^x+1}$.
+
+Un logiciel de calcul formel nous donne les résultats suivants, que l'on peut utiliser sans justification:
+          
+\begin{CalculFormelXcas}[TexteOptions=XCas Calcul Formel, Sep=false]
+	\LigneCalculsXcas{deriver($(x-1)/(e^x+1)$)}{$\dfrac{(2-x)e^x+1}{(e^x+1)^2}$}
+\end{CalculFormelXcas}
+
+
+\begin{enumerate}
+	\item \textit{\`A l'aide de la partie $A$, déterminer les variations de la fonction $f$ sur $[0;+\infty[$.}
+
+	On a d'après le logiciel de calcul formel, pour tout $x\in[0;+\infty[$ : $f'(x)=\dfrac{g(x)}{(e^x+1)^2}$
+
+	$f'$ est donc du signe de $g$, donc on en déduit donc le tableau de variations de $f$ 
+
+
+	\begin{center}
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $g(x)$ / 1, $f'(x)$ / 1, $f(x)$ / 1.5}{$0$, $\alpha$, $+\infty$}
+			\tkzTabLine{, +, z, -, }
+			\tkzTabLine{, +, z, -, }
+			\tkzTabVar{-/ $-\dfrac{1}{2} $ , +/ $ $, -/ $0$}
+		 \end{tikzpicture}
+		\end{center}
+
+
+
+	\item \textit{Montrer que $e^\alpha=\dfrac{1}{\alpha-2}$ puis en déduire que $f(\alpha)=\alpha-2$.}
+	
+	On a:  $g(\alpha)=0 \iff (2-\alpha)e^\alpha+1=0 \iff (2-\alpha)e^\alpha=-1 \iff e^\alpha = -\dfrac{1}{2-\alpha} \iff e^\alpha=\dfrac{1}{\alpha-2}$.
+
+	On en déduit que $f(\alpha)=\dfrac{\alpha- 1}{e^\alpha+1}=\dfrac{\alpha-1}{\dfrac{1}{\alpha-2}+1}=\dfrac{\alpha-1}{\dfrac{1+\alpha-2}{\alpha-2}}=\dfrac{\alpha-1}{\dfrac{\alpha-1}{\alpha-2}}=(\alpha-1)\times \dfrac{\alpha-2}{\alpha-1}=\alpha-2$.
+	\item \textit{En déduire un encadrement d'amplitude $10^{-2}$ de $f(\alpha)$.}
+	
+	D'après la Partie A: $2,12 \leqslant \alpha \leqslant 2,13 \iff 0,12 \leqslant \alpha-2 \leqslant 0,13 \iff0,12 \leqslant f(\alpha)\leqslant 0,13$.
+
+\end{enumerate}
+
+\medskip
+
+\end{exerciceinterro}
+
+\pagebreak
+
+\begin{exerciceinterro}{\hspace{2cm}/4 points}{}
+
+
+
+\medskip 
+
+Soit $f$ la fonction définie sur l'intervalle $[-3~;~4]$ par :
+
+\[f(x) = \dfrac{\text{e}^x}{1 + x^2}\]
+
+On note $\mathcal{C}_f$ sa courbe représentative dans un repère orthogonal.
+
+\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item \textit{Déterminer la dérivée de la fonction $f$ sur l'intervalle $[-3~;~4]$.}
+		
+		$f$ est dérivable sur $[-3~;~4]$ et pour tout $x\in[-3~;~4]$:
+		
+		$f'(x)=\dfrac{e^x(1+x^2-e^x\times 2x)}{(1+x^2)^2}=\dfrac{(1-2x+x^2)e^x}{(1+x^2)^2}=\dfrac{(1-x)^2e^x}{(1+x^2)^2}$.
+		\item \textit{Justifier que la courbe $\mathcal{C}_f$ admet une tangente horizontale au point d'abscisse 1.}
+		
+		On a $f'(1)=\dfrac{(1-1)^2e}{(1+1^2)^2}=0$, donc la courbe $\mathcal{C}_f$ admet une tangente horizontale au point d'abscisse $1$.
+
+	\end{enumerate}
+\item  Les concepteurs d'un toboggan utilisent la courbe $\mathcal{C}_f$ comme profil d'un toboggan. Ils estiment que le toboggan assure de bonnes sensations si le profil possède au moins deux points d'inflexion.
+
+\medskip
+
+\begin{minipage}{0.48\linewidth}
+\psset{unit=0.75cm}
+\begin{pspicture*}(-4,-1.95)(4.25,4.1)
+\psgrid[gridlabels=0pt,subgriddiv=1,gridwidth=0.15pt](-4,0)(4,4)
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle](0,0)(-4,-0)(4.25,4.1)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{-3}{4}{2.71828 x exp x dup mul 1 add div}
+\rput(0,-1){Représentation de la courbe $\mathcal{C}_f$}
+\uput[ul](3,2){\blue \small $\mathcal{C}_f$}
+\end{pspicture*}
+\end{minipage} \hfill
+\begin{minipage}{0.48\linewidth}
+\psset{unit=0.75cm}
+\begin{pspicture}(-4,-1.95)(4.25,4.1)
+%\psgrid
+\def\tobo{\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}}
+\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}
+\rput(-0.6,0.6){\tobo}
+\psline(-3,0)(-3.6,0.6)\psline(4,3.2)(3.4,3.8)
+\pscustom[fillstyle=solid,fillcolor=lightgray]
+{\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{-3}{4}{2.71828 x exp x dup mul 1 add div}
+\psline(4,3.2)(4,0)(-2,0)}
+\rput(0,-1){Vue de profil du toboggan}
+\end{pspicture}
+\end{minipage}
+
+	\begin{enumerate}
+		\item \textit{D'après le graphique ci-dessus, le toboggan semble-t-il assurer de bonnes sensations ? Argumenter}.
+		
+		La fonction $f$ semble convexe sur $[-4;-0,3]$ puis concave sur $[-0,3;1]$ puis convexe sur $[1;4]$.
+
+		Elle change donc de convexité et $\mathcal{C}_f$ semble présenter deux points d'inflexion. Le tobbogan seble donc assurer de bonnes senstations.
+
+		\item On admet que la fonction $f''$, dérivée seconde de la fonction $f$, a pour expression pour tout réel $x$ de l'intervalle $[-3~;~4]$ :
+
+		\[f''(x) = \dfrac{p(x)(x - 1)\text{e}^x}{\left(1 + x^2\right)^3}\]
+ avec pour tout réel $x\in[-3;4]$, $p(x)= x^3 - 3x^2 + 5x + 1$,  et on admet également que le signe de $p(x)$ est donné par le tableau suivant:
+
+\begin{center}
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $p(x)$ / 1}{$-3$, $\alpha$, $4$}
+		\tkzTabLine{, -, z, +, }
+	\end{tikzpicture}
+	\end{center}
+avec $\alpha\approx -0,2$ à $10^{-1}$ près.
+
+
+
+\textit{En utilisant l'expression précédente de $f''$, répondre à la question : \og le toboggan assure-t-il de bonnes sensations ? \fg. Justifier.}
+
+On étudie la convexité de $f$, donc on étudie le signe de $f''(x)$. D'après l'expression admise, $f''(x)$ est du signe de $p(x)(x-1)$. On en déduit le tableau :
+
+
+
+
+\begin{center}
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $p(x)$ / 1, $x-1$ / 1, $f''(x)$ / 1.5}{$-3$, $\alpha$ ,$1$, $4$}
+		\tkzTabLine{, -, z, +, , +}
+		\tkzTabLine{, -, , -, z, +}
+		\tkzTabLine{, +, z, -, z, +}
+	 \end{tikzpicture}
+	\end{center}
+
+	$f''$ s'annule deux fois en changeant de signe (ou $f$ change deux fois de convexité), donc $\mathcal{C}_f$ présente deux points d'inflexion.
+
+	Le tobbogan assure donc de bonnes sensations.
+
+	\end{enumerate}
+	
+	
+	
+	\item (Bonus) : Montrer que pour tout réel $x$ de l'intervalle $[-3~;~4]$ :
+
+		\[f''(x) = \dfrac{(x^3-3x^2+5x+1)(x - 1)\text{e}^x}{\left(1 + x^2\right)^3}\]
+
+\end{enumerate}
+
+\bigskip
+
+
+\end{exerciceinterro}
+
+\pagebreak
+
+
+
+\begin{exerciceinterro}{\hspace{2cm}/5 points}{}
+
+
+En mai 2020, une entreprise fait le choix de développer le télétravail afin de s'inscrire dans une démarche écoresponsable.
+
+Elle propose alors à ses \np{5000}~collaborateurs en France de choisir entre le télétravail et le travail au sein des locaux de l'entreprise.
+
+\medskip
+
+Afin d'évaluer l'impact de cette mesure sur son personnel, les dirigeants de l'entreprise sont parvenus à modéliser le nombre de collaborateurs satisfaits par ce dispositif à l'aide de la suite 
+$\left(u_n\right)$ définie par $u_0 = 1$ et, pour tout entier naturel $n$,
+
+\[u_{n+1}  = \dfrac{5u_n + 4}{u_n + 2}\]
+
+où $u_n$ désigne le nombre de milliers de collaborateurs satisfaits par cette nouvelle mesure au bout de $n$ mois après le mois de mai 2020.
+
+\medskip
+
+\begin{enumerate}
+\item Démontrer que la fonction $f$ définie pour tout $x \in  [0~;~ +\infty[$ par $f(x) = \dfrac{5x+4}{x+2}$ est 
+strictement croissante sur $[0~;~+ \infty[$.
+		\item Démontrer par récurrence que pour tout entier naturel 
+		\[0 \leqslant u_n \leqslant u_{n+1}  \leqslant  5.\]
+		
+		\item Justifier que la suite $\left(u_n\right)$ est convergente.
+
+\item En déduire la limite de la suite $\left(u_n\right)$ et l'interpréter dans le contexte de l'exercice.
+\end{enumerate}
+
+\end{exerciceinterro}
+
+
+\begin{exerciceinterro}{\hspace{2cm}/4 points}{}
+
+
+Dans tout cet exercice, les probabilités seront arrondies, si nécessaire, à $10^{-3}$.
+
+D'après une étude, les utilisateurs réguliers de transports en commun représentent 17\,\% de la population française. 
+
+Parmi ces utilisateurs réguliers, 32\,\% sont des jeunes âgés de 18 à 24 ans. (Source : TNS-Sofres)
+
+\bigskip
+
+\textbf{Partie A} :
+
+\medskip
+ 
+On interroge une personne au hasard et on note :
+
+\setlength\parindent{9mm}
+\begin{itemize}
+\item $R$ l'évènement : \og La personne interrogée utilise régulièrement les transports en commun \fg.
+\item $J$ l'évènement : \og La personne interrogée est âgée de 18 à 24 ans \fg.
+\end{itemize}
+\setlength\parindent{0mm}
+
+\medskip
+
+\begin{enumerate}
+\item Représentez la situation à l'aide de cet arbre pondéré, que vous recopierez sur votre copie, en y reportant les données de l'énoncé.
+\begin{center}
+\pstree[treemode=R,nodesepB=3pt,levelsep=2.8cm]{\TR{}}
+{\pstree{\TR{$R$~~}}
+		{\TR{$J$}
+		\TR{$\overline{J}$}
+ 		}
+\pstree{\TR{$\overline{R}$~~}}
+		{\TR{$J$}
+		\TR{$\overline{J}$}
+		}
+}
+\end{center}
+
+\item Calculer la probabilité $P(R \cap J)$.
+\item D'après cette même étude, les jeunes de 18 à 24 ans représentent 11\,\% de la population française.
+
+Montrer que la probabilité que la personne interrogée soit un jeune de 18 à 24 ans n'utilisant pas régulièrement les transports en commun est 0,056 à $10^{-3}$ près.
+\item En déduire la proportion de jeunes de 18 à 24 ans parmi les utilisateurs non réguliers des transports en commun.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Partie B} :
+
+\medskip
+
+Lors d'un recensement sur la population française, un recenseur interroge au hasard 50 personnes en une journée sur leur pratique des transports en commun. 
+
+La population française est suffisamment importante pour assimiler ce recensement à un tirage avec remise.
+
+Soit $X$ la variable aléatoire dénombrant les personnes utilisant régulièrement les transports en commun parmi les 50 personnes interrogées.
+
+\medskip
+
+\begin{enumerate}
+\item Déterminer, en justifiant, la loi de $X$ et préciser ses paramètres.
+\item Calculer $P(X = 5)$ et interpréter le résultat.
+\item Le recenseur indique qu'il y a moins de 5\,\% de chance pour que, parmi les $50$ personnes interrogées, $13$ personnes ou plus utilisent régulièrement les transports en commun.
+
+Cette affirmation est-elle vraie ? Justifier votre réponse.
+\item Quel est le nombre moyen de personnes utilisant régulièrement les transports en commun parmi les $50$ personnes interrogées ?
+\end{enumerate}
+
+
+\end{exerciceinterro}
+
+
+
+
+
+
+\end{document}
+        
