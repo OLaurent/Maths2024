@@ -42,6 +42,14 @@
 						"tools": [
 							"latexmk"
 						]
+					},
+					{
+						"name": "latex -> dvips -> ps2pdf",
+						"tools": [
+							"latex",
+							"dvips",
+							"ps2pdf"
+						]
 					}
 				],
 				"latex-workshop.latex.tools": [
@@ -104,6 +112,22 @@
 						"args": [
 							"%WORKSPACE_FOLDER%/scripts/pythontex/pythontex3.py",
 							"%DOC%"
+						],
+						"env": {}
+					},
+					{
+						"name": "dvips",
+						"command": "dvips",
+						"args": [
+							"%DOCFILE%"
+						],
+						"env": {}
+					},
+					{
+						"name": "ps2pdf",
+						"command": "ps2pdf",
+						"args": [
+							"%DOCFILE%"
 						],
 						"env": {}
 					}

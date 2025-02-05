@@ -4,9 +4,11 @@
 \usepackage[french]{babel}
 
 \usepackage{ProfLycee}
+\useproflyclib{ecritures}
 \usepackage{math-vh}
 \usepackage{tabularx}
 \usepackage{eurosym}
+\usepackage[np]{numprint}
 \usepackage{pst-plot,pst-tree,pstricks,pst-node,pst-text}
 \usepackage{FenetreCas}
 
@@ -312,14 +314,55 @@ où $u_n$ désigne le nombre de milliers de collaborateurs satisfaits par cette 
 \medskip
 
 \begin{enumerate}
-\item Démontrer que la fonction $f$ définie pour tout $x \in  [0~;~ +\infty[$ par $f(x) = \dfrac{5x+4}{x+2}$ est 
-strictement croissante sur $[0~;~+ \infty[$.
-		\item Démontrer par récurrence que pour tout entier naturel 
-		\[0 \leqslant u_n \leqslant u_{n+1}  \leqslant  5.\]
-		
-		\item Justifier que la suite $\left(u_n\right)$ est convergente.
+\item \textit{Démontrer que la fonction $f$ définie pour tout $x \in  [0~;~ +\infty[$ par $f(x) = \dfrac{5x+4}{x+2}$ est 
+strictement croissante sur $[0~;~+ \infty[$.}
 
-\item En déduire la limite de la suite $\left(u_n\right)$ et l'interpréter dans le contexte de l'exercice.
+	La fonction $f$ est dérivable sur $\IntervalleFO{0}{+\infty}$ et pour tout $x\in\IntervalleFO{0}{+\infty}$, on a:
+	
+	$f'(x)=\dfrac{5(x+2)-(5x+4)}{(x+2)^2}=\dfrac{10-4}{(x+2)^2}=\dfrac{6}{(x+2)^2}$
+
+	Pour tout réel positif $x$, $(x+2)^2>0$ donc $f'(x)>0$. $f$ est strictement croissante sur $\IntervalleFO{0}{+\infty}$.
+
+
+
+		\item \textit{Démontrer par récurrence que pour tout entier naturel 
+		\[0 \leqslant u_n \leqslant u_{n+1}  \leqslant  5.\]
+		}
+
+		On considère la proposition $\mathcal{P}(n)$ : $0 \leqslant u_n \leqslant u_{n+1}  \leqslant  5$.
+
+		\underline{Initialisation}:
+		On a $u_0=1$ et $u_1=\dfrac{5\times 1+4}{1+2}=\dfrac{9}{3}=3$ donc $0 \leqslant u_0 \leqslant u_1 \leqslant  5$. $\mathcal{P}(0)$ est vraie.
+
+		\underline{Hérédité}:
+		Soit $k$ un entier naturel. Supposons que $\mathcal{P}(k)$ soit vraie, c'est-à-dire que $0 \leqslant u_k \leqslant u_{k+1}  \leqslant  5$.
+
+		\begin{align*}
+			& 0\leqslant u_k \leqslant u_{k+1}  \leqslant  5 \\
+			\iff & f(0) \leqslant f(u_k) \leqslant f(u_{k+1})  \leqslant  f(5) \text{ (car $f$ est strictement croissante)}\\
+			\iff & 2 \leqslant u_{k+1} \leqslant u_{k+2}  \leqslant  \dfrac{29}{7} \\
+			\Longrightarrow & 0 \leqslant u_{k+1} \leqslant u_{k+2}  \leqslant  5
+		\end{align*}
+
+		$\mathcal{P}(k+1)$ est donc vraie.
+
+		\underline{Conclusion}:
+		On a $P(0)$ vraie et pour tout entier $k$, $P(k) \Longrightarrow P(k+1)$, donc par le principe de récurrence, pour tout entier naturel $n$, $0 \leqslant u_n \leqslant u_{n+1}  \leqslant  5$.
+
+
+		\item \textit{Justifier que la suite $\left(u_n\right)$ est convergente.}
+		
+		La suite $(u_n)$ est croissante et majorée par $5$ d'après la question précédente, donc elle est convergente d'après le théorème de convergence monotone.
+
+\item \textit{En déduire la limite de la suite $\left(u_n\right)$ et l'interpréter dans le contexte de l'exercice.}
+
+		La fonction $f$ est continue car elle est dérivable sur son ensemble de définition. La suite $(u_n)$ est convergente vers une limite $\ell$, donc $\ell$ vérifie $\ell=f(\ell)$.
+
+		On a donc $\ell=\dfrac{5\ell+4}{\ell+2} \iff \ell(\ell+2)=5\ell+4 \iff \ell^2+2\ell=5\ell+4 \iff \ell^2-3\ell-4=0 \iff (\ell-4)(\ell+1)=0$.
+
+		On en déduit que $\ell=4$ ou $\ell=-1$. Comme $u_0=1$ et $(u_n)$ est croissante, on a $\ell\neq -1$, donc $\lim\limits_{n \to +\infty} u_n=4$.
+
+
 \end{enumerate}
 
 \end{exerciceinterro}
@@ -352,7 +395,7 @@ On interroge une personne au hasard et on note :
 \medskip
 
 \begin{enumerate}
-\item Représentez la situation à l'aide de cet arbre pondéré, que vous recopierez sur votre copie, en y reportant les données de l'énoncé.
+\item \textit{Représentez la situation à l'aide de cet arbre pondéré, que vous recopierez sur votre copie, en y reportant les données de l'énoncé.}
 \begin{center}
 \pstree[treemode=R,nodesepB=3pt,levelsep=2.8cm]{\TR{}}
 {\pstree{\TR{$R$~~}}
@@ -366,7 +409,26 @@ On interroge une personne au hasard et on note :
 }
 \end{center}
 
-\item Calculer la probabilité $P(R \cap J)$.
+\begin{tikzpicture}
+	\tikzstyle{level 1}=[level distance=5cm, sibling distance=4cm]
+	\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+	\node{}[grow=right]
+	child{node{$\overline{\text{E}_n} $}
+	  child{node{$J$}
+		  edge from parent node[below]{$\ldots$}}
+	  child{node{$\text{E}_{n+1}$}
+		  edge from parent node[above]{$\ldots$}}
+	  edge from parent node[below]{$\ldots$}}
+	child{node{$\text{E}_n$}
+	  child{node{$\overline{\text{E}_{n+1}}$}
+		  edge from parent node[below]{$\ldots$}}
+	  child{node{$\text{E}_{n+1}$}
+		  edge from parent node[above]{$\ldots$}}
+	  edge from parent node[above]{$p_n$}};
+\end{tikzpicture}
+
+\item \textit{Calculer la probabilité $P(R \cap J)$.}
+\
 \item D'après cette même étude, les jeunes de 18 à 24 ans représentent 11\,\% de la population française.
 
 Montrer que la probabilité que la personne interrogée soit un jeune de 18 à 24 ans n'utilisant pas régulièrement les transports en commun est 0,056 à $10^{-3}$ près.
