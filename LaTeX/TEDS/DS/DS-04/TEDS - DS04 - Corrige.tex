@@ -209,31 +209,6 @@ On note $\mathcal{C}_f$ sa courbe représentative dans un repère orthogonal.
 
 \medskip
 
-\begin{minipage}{0.48\linewidth}
-\psset{unit=0.75cm}
-\begin{pspicture*}(-4,-1.95)(4.25,4.1)
-\psgrid[gridlabels=0pt,subgriddiv=1,gridwidth=0.15pt](-4,0)(4,4)
-\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle](0,0)(-4,-0)(4.25,4.1)
-\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{-3}{4}{2.71828 x exp x dup mul 1 add div}
-\rput(0,-1){Représentation de la courbe $\mathcal{C}_f$}
-\uput[ul](3,2){\blue \small $\mathcal{C}_f$}
-\end{pspicture*}
-\end{minipage} \hfill
-\begin{minipage}{0.48\linewidth}
-\psset{unit=0.75cm}
-\begin{pspicture}(-4,-1.95)(4.25,4.1)
-%\psgrid
-\def\tobo{\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}}
-\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}
-\rput(-0.6,0.6){\tobo}
-\psline(-3,0)(-3.6,0.6)\psline(4,3.2)(3.4,3.8)
-\pscustom[fillstyle=solid,fillcolor=lightgray]
-{\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{-3}{4}{2.71828 x exp x dup mul 1 add div}
-\psline(4,3.2)(4,0)(-2,0)}
-\rput(0,-1){Vue de profil du toboggan}
-\end{pspicture}
-\end{minipage}
-
 	\begin{enumerate}
 		\item \textit{D'après le graphique ci-dessus, le toboggan semble-t-il assurer de bonnes sensations ? Argumenter}.
 		
@@ -367,6 +342,8 @@ strictement croissante sur $[0~;~+ \infty[$.}
 
 \end{exerciceinterro}
 
+\pagebreak
+ 
 
 \begin{exerciceinterro}{\hspace{2cm}/4 points}{}
 
@@ -397,42 +374,46 @@ On interroge une personne au hasard et on note :
 \begin{enumerate}
 \item \textit{Représentez la situation à l'aide de cet arbre pondéré, que vous recopierez sur votre copie, en y reportant les données de l'énoncé.}
 \begin{center}
-\pstree[treemode=R,nodesepB=3pt,levelsep=2.8cm]{\TR{}}
-{\pstree{\TR{$R$~~}}
-		{\TR{$J$}
-		\TR{$\overline{J}$}
- 		}
-\pstree{\TR{$\overline{R}$~~}}
-		{\TR{$J$}
-		\TR{$\overline{J}$}
-		}
-}
-\end{center}
-
-\begin{tikzpicture}
-	\tikzstyle{level 1}=[level distance=5cm, sibling distance=4cm]
-	\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
-	\node{}[grow=right]
-	child{node{$\overline{\text{E}_n} $}
-	  child{node{$J$}
-		  edge from parent node[below]{$\ldots$}}
-	  child{node{$\text{E}_{n+1}$}
-		  edge from parent node[above]{$\ldots$}}
-	  edge from parent node[below]{$\ldots$}}
-	child{node{$\text{E}_n$}
-	  child{node{$\overline{\text{E}_{n+1}}$}
-		  edge from parent node[below]{$\ldots$}}
-	  child{node{$\text{E}_{n+1}$}
-		  edge from parent node[above]{$\ldots$}}
-	  edge from parent node[above]{$p_n$}};
-\end{tikzpicture}
+	\begin{tikzpicture}
+		\tikzstyle{level 1}=[level distance=5cm, sibling distance=4cm]
+		\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+		\node{}[grow=right]
+		child{node{$\overline{R} $}
+		  child{node{$\overline{J}$}
+			  edge from parent node[below]{$\ldots$}}
+		  child{node{$J$}
+			  edge from parent node[above]{$\ldots$}}
+		  edge from parent node[below]{$0.83$}}
+		child{node{$R$}
+		  child{node{$\overline{J}$}
+			  edge from parent node[below]{$0.68$}}
+		  child{node{$J$}
+			  edge from parent node[above]{$0.32$}}
+		  edge from parent node[above]{$0.17$}};
+	\end{tikzpicture}
+		\end{center}
 
 \item \textit{Calculer la probabilité $P(R \cap J)$.}
-\
-\item D'après cette même étude, les jeunes de 18 à 24 ans représentent 11\,\% de la population française.
 
-Montrer que la probabilité que la personne interrogée soit un jeune de 18 à 24 ans n'utilisant pas régulièrement les transports en commun est 0,056 à $10^{-3}$ près.
+On a $P(R \cap J)=P(R) \times P_{R}(J)=0,17 \times 0,32=0,0544$.
+
+\item \textit{D'après cette même étude, les jeunes de 18 à 24 ans représentent 11\,\% de la population française.}
+
+\textit{Montrer que la probabilité que la personne interrogée soit un jeune de 18 à 24 ans n'utilisant pas régulièrement les transports en commun est 0,056 à $10^{-3}$ près.}
+
+On cherche à calculer $P(\overline{R} \cap J)$.
+
+On a d'après l'énoncé $P(J)=0,11$. 
+
+De plus, d'après la formule des probabilités totales, on a $P(J)=P(\overline{R} \cap J)+P(R \cap J)$. On peut donc en déduire que $P(\overline{R} \cap J)=P(J)-P(R \cap J)=0,11-0,0544=0,0556$.
+
 \item En déduire la proportion de jeunes de 18 à 24 ans parmi les utilisateurs non réguliers des transports en commun.
+
+On cherche maintenant $P_{\overline{R}}(J)$.
+
+On a $P_{\overline{R}}(J)=\dfrac{P(\overline{R} \cap J)}{P(\overline{R})}=\dfrac{0,0556}{0,83}\approx 0,0671$.
+
+La proportion est donc de $6,71\%$.
 \end{enumerate}
 
 \bigskip
@@ -450,12 +431,30 @@ Soit $X$ la variable aléatoire dénombrant les personnes utilisant régulièrem
 \medskip
 
 \begin{enumerate}
-\item Déterminer, en justifiant, la loi de $X$ et préciser ses paramètres.
-\item Calculer $P(X = 5)$ et interpréter le résultat.
-\item Le recenseur indique qu'il y a moins de 5\,\% de chance pour que, parmi les $50$ personnes interrogées, $13$ personnes ou plus utilisent régulièrement les transports en commun.
+\item \textit{Déterminer, en justifiant, la loi de $X$ et préciser ses paramètres.}
+
+On réalise $50$ fois de manière indépendante une même expérience de Bernoulli de paramètre $p=0,17$ (la probabilité qu'une personne utilise régulièrement les transports en commun) et de succès: \textquote{la personne interrogée utilise régulièrement les transports}. La variable aléatoire $X$ compte le nombre de succès, donc $X$ suit une loi binomiale de paramètres $n=50$ et $p=0,17$.
+
+\item \textit{Calculer $P(X = 5)$ et interpréter le résultat.}
+
+On a $P(X = 5)=\binom{50}{5} \times 0,17^5 \times 0,83^{45}\approx 0,139$.
+
+Il y a environ $13,9\%$ de chance que parmi les $50$ personnes interrogées, $5$ personnes utilisent régulièrement les transports en commun.
+\item \textit{Le recenseur indique qu'il y a moins de 5\,\% de chance pour que, parmi les $50$ personnes interrogées, $13$ personnes ou plus utilisent régulièrement les transports en commun.}
 
 Cette affirmation est-elle vraie ? Justifier votre réponse.
-\item Quel est le nombre moyen de personnes utilisant régulièrement les transports en commun parmi les $50$ personnes interrogées ?
+
+On cherche à calculer $P(X \geqslant 13)$.
+
+A la calculatrice, on trouve $P(X \geqslant 13)= 1- P(X < 13) \approx 0,0714$.
+
+Il y a donc environ $7,14\%$ de chance que parmi les $50$ personnes interrogées, $13$ personnes ou plus utilisent régulièrement les transports en commun. La probabilité est donc supérieure à $5\%$, donc l'affirmation du recenseur est fausse.
+
+\item \textit{Quel est le nombre moyen de personnes utilisant régulièrement les transports en commun parmi les $50$ personnes interrogées ?}
+
+On a $E(X)=n\times p=50\times 0,17=8,5$.
+
+Le nombre moyen de personnes utilisant régulièrement les transports en commun parmi les $50$ personnes interrogées est donc de $8,5$.
 \end{enumerate}
 
 
