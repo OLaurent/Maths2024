@@ -1,0 +1,278 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{ProfLycee}
+\useproflyclib{ecritures}
+\usepackage{math-vh}
+% *** Réglage des headers ***
+\fancyhead[L]{TMATHS4 --- Lycée Victor Hugo}
+\fancyhead[R]{O. Laurent --- Année 2024--2025}
+% *** Réglage des headers ***
+
+\begin{document}
+
+\begin{center}
+  {\scshape\LARGE Chapitre 10 --- Primitives et équations différentielles\par}
+\end{center}
+
+\begin{activite}{}{}
+  La loi de refroidissement d'Isaac Newton (anglais 1642-1727) stipule que le taux d'évolution de la température d'un corps est proportionnelle
+  à la différence entre la température de ce corps et celle du milieu environnant.
+
+On rappelle que dans le cas discret, entre deux minutes consécutives $n$ et $n + 1$, la température $T_n$ , exprimée en degré Celsius, d'un café vérifiait :
+$$\dfrac{T{n+1}-T_n}{n+1-n}=T_{n+1}-T_n=-0,2(T_n-18)$$
+Dans le cas continu (le temps $x$ est exprimé en minute et décrit cette fois une variable continue), entre deux temps $x$ et $x'$, tels que $x<x'$, on a :
+$$\dfrac{T(x')-T(x)}{x'-x}=-0,2(T(x)-18)$$
+Généralement, la variation $T(x')-T(x)$ est notée $\Delta T(x)$.
+
+
+Pour une variation infinitésimale (très petite, $t'-t$ proche de 0) du temps, avec la fonction T dérivable sur l'intervalle d'étude, ici $[0;+\infty[$, on a :
+$$T'(x)=-0,2(T(x)-18) \iff T'(x)=-0,2T(x)+3,6$$
+
+Cette équation est appelée équation différentielle d'ordre 1.
+
+Soit la fonction $f$ définie par $f(x)=18+62e^{-0,2x}$.
+
+\begin{enumerate}
+  \item On rappelle que la température du café au début de l'expérience est de 80 degré Celsius. Vérifier que la fonction $f$ vérifie la condition initiale $f(0)=80$.
+  \item Montrer que la fonction est solution du problème, c'est-à-dire qu'elle vérifie l'équation différentielle.
+\end{enumerate}
+\end{activite}
+
+\begin{activite}{}{}
+\begin{enumerate}
+  \item Déterminer une solution de l'équation différentielle $y'=2$.
+  \item Déterminer une solution de l'équation différentielle $y'=y$.
+  \item Déterminer une solution de l'équation différentielle $y'=3x^2$.
+  \item Déterminer trois solutions de l'équation différentielle $y'=2x$.
+\end{enumerate}
+\end{activite}
+
+
+\pagebreak
+
+\section{\'Equation différentielle}
+\begin{definition*}{}{}
+  Une équation différentielle est une équation dont les inconnues sont des fonctions, ici d'une variable $x$ ou $t$.
+  
+  En particulier, une équation dans laquelle intervient une fonction dérivable $f$, sa dérivée $f'$ et la variable $x$ s'appelle 
+  une \textbf{équation différentielle du $1^{er}$ ordre}.
+  \end{definition*}
+  
+  \begin{definition*}{}{}
+    Soit $f$ une fonction définie sur un intervalle $I$ de $\R$.
+    
+    On dit qu'une fonction $F$ est solution de l'équation différentielle $y'=f$ sur $I$ 
+    lorsque $F$ est dérivable sur $I$  et $\forall x \in I, F'(x)=f(x)$.
+    \end{definition*}
+
+\begin{example*}{}{}
+$y'=2x$, pour $x$ élement de $\R$, est une équation différentielle. 
+
+La fonction $f(x)=x^2$ est dérivable sur $\R$ et $f'(x)=2x$, donc $f$ est \textbf{une} solution 
+de cette équation différentielle.
+\end{example*}
+
+\begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}, sidebyside align=top]{Vérifier qu'une fonction est solution d'une équation différentielle}{}
+Montrer que la fonction $f$ définie par $f(x)=3x^2+4x-8$ est solution de l'équation différentielle $$y'-y=-3x^2+2x-4$$
+
+    \tcblower
+    \vspace{4cm}
+    \SimpleQRCode{https://www.youtube.com/watch?v=LX8PxR-ScfM}{1.2cm}
+  
+\end{methode*}
+
+\begin{exercices}{}{}
+	48--52 p.306, 140 p.313
+\end{exercices}
+
+\section{Primitive d'une fonction}
+
+
+\begin{definition*}{}{}
+  Soit $f$ une fonction définie sur un intervalle $I$ de $\R$.
+
+  Une fonction $F$ est une \textbf{primitive} de $f$ sur $I$ si pour tout $x \in I$, $F'(x)=f(x)$.
+\end{definition*}
+
+\begin{example*}{}{}
+  Soit $f$ la fonction définie sur $\R$ par $f(x)=6x$. La fonction $F$ définie par $F(x)=3x^2+4$ est une primitive de $f$ 
+  sur $\R$ car $F'(x)=3\times2x=6x=f(x)$.
+\end{example*}
+
+
+\begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}, sidebyside align=top]{Vérifier qu'une fonction est une primitive d'une autre}{}
+    Montrer que la fonction $F$ définie par $F(x)=x^2e^x$ est une primitive de la fonction $f$ définie par $f(x)=(x^2+2x)e^x$.
+        \tcblower
+        \vspace{3cm}
+        \SimpleQRCode{https://www.youtube.com/watch?v=7tQqY9Vkmss}{1.2cm}
+      
+    \end{methode*}
+    
+
+\begin{proprieteadm*}{}{}
+Toute fonction continue sur un intervalle $I$ admet des primitives sur $I$
+\end{proprieteadm*}
+
+\begin{propriete*}{}{}
+Soit $f$ une fonction continue sur $I$.
+
+Deux primitives de $f$ sur $I$ diffèrent d'une constante.
+
+Autrement dit, si $F$ est une primitive de $F$ sur $I$, les autres primitives de $f$ sont de la forme $F+k$, avec $k\in \R$.
+\end{propriete*}
+
+\begin{demonstrationp*}{}{}
+Soient $F$ et $G$ deux primitives de la fonction $f$ sur $I$.
+
+On a alors $\forall x \in I, F'(x)=f(x)$ et $G'(x)=f(x)$. On en déduit que $F'(x)-G'(x)=f(x)-f(x)=0$, soit $(F-G)'(x)=0$.
+
+La fonction dérivée de $F-G$ est nulle sur $I$, donc $F-G$ est constante sur $I$. 
+
+En notant $k$ cette constante, on a $\forall x \in I, F(x)-G(x)=k$ soit $F(x)=G(x)+k$. Les deux primitives diffèrent d'une constante.
+\end{demonstrationp*}
+
+
+\begin{example*}{}{}
+  Soit $f$ la fonction définie sur $\R$ par $f(x)=6x$.
+  
+  Les primitives de $f$ sont de la forme par $F_k(x)=3x^2+k$, avec $k\in\R$.
+\end{example*}
+
+\begin{propriete*}{}{}
+Soit $f$ une fonction continue sur un intervalle $I$.
+
+Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$ de $f$ sur $I$ telle que $F(x_0)=y_0$.
+\end{propriete*}
+
+\begin{exercices}{}{}
+54--59 p.306
+\end{exercices}
+
+\section{Primitives des fonctions usuelles}
+
+
+\begin{propriete}{}{}
+  \begin{center}
+    \renewcommand\arraystretch{2}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      La fonction $f:x\longmapsto ... $ &  a une primitive $F:x\longmapsto ...$ & sur l'intervalle $I=...$\\
+       \hline
+        $k$ & $kx$ & $\R$ \\
+       \hline
+       $x^n$, avec $n\neq0$ et $n\neq 1$ & $\dfrac{x^{n+1}}{n+1}$ & $\R$ si $n>0$, $]-\infty;0[$ ou $]0;+\infty[$ si $n\leqslant -2$ \\
+       \hline
+        $-\dfrac{1}{x^2}$ & $\dfrac{1}{x}$ & $]-\infty;0[$ ou $]0;+\infty[$ \\
+       \hline
+       $\dfrac{1}{\sqrt{x}}$ & $2\sqrt{x}$ & $]0;+\infty[$ \\
+       \hline
+       $\dfrac{1}{x}$ & $ln(x)$ & $]0;+\infty[$ \\
+       \hline
+       $e^x$ & $e^x$ & $\R$ \\
+       \hline     
+  \end{tabular}
+  \end{center}
+\end{propriete}
+
+\begin{exercices}{}{}
+  69--71 p.307,  73-80 p.307
+\end{exercices}
+
+\begin{propriete}{}{}
+  Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$, $k$ un réel quelconque, $n$ un entier différent de $0$ et $-1$, et $u$ une fonction dérivable sur $I$.
+  \begin{itemize}[label=\textbullet]
+    \item Une primitive de $kf$ est $kF$, avec $F$ une primitive de $f$
+    \item Une primitive de $f+g$ est $F+G$, avec $F$ une primitive de $f$ et $G$ une primitive de $g$
+    \item Une primitive de $u'e^u$ est $e^u$
+    \item Une primitive de $u'u^n$ est $\dfrac{u^{n+1}}{n+1}$, avec $u$ ne s'annulant pas dans le cas ou $n$ est négatif
+    \item Une primitive de $\dfrac{u'}{\sqrt{u}}$ est $2\sqrt{u}$, si $u$ est strictement positive sur $I$.
+    \item Une primitive de $\dfrac{u'}{u}$ est $ln(u)$, si $u$ est strictement positive sur $I$.
+  \end{itemize} 
+\end{propriete}
+
+\begin{exercices}{}{}
+  81--86 p.307, 90--97 p.308, 102--103 p.308, 133--136 p.312, 138--139 p.313
+\end{exercices}
+
+
+\pagebreak
+
+\section{Equations différentielles $y'=ay$ et $y'=ay+b$}
+    \begin{theoreme}{}{}
+    Soit $a$ un nombre réel.
+
+    Les fonctions solutions de l'équation différentielle $y'=ay$ sont les fonctions $x\mapsto Ce^{ax}$, où 
+    $C$ est une constante réelle.
+
+    Si, de plus, pour deux réels $x_0$ et $k$ donnés, $y(x_0)=k$, alors la fonction 
+    définie sur $\R$ par $x \mapsto ke^{a(x-x_0)}$ est l'unique fonction solution de l'équation différentielle $y'=ay$.
+    \end{theoreme}
+
+    \begin{demonstrationp}{}{}
+      Soit $C$ un réel. Les fonctions définies par $f(x)=Ce^{ax}$ vérifient bien l'équation différentielle: en effet,
+      $f'(x)=C\times a e^{ax}=a\times Ce^{ax}=af(x)$.
+
+      Réciproquement, soit $f$ une solution de l'équation différentielle $y'=ay$.
+
+      On pose $g(x)=e^{-ax}f(x)$. La fonction $g$ est dérivable sur $\R$ et: $g'(x)=(e^{-ax})'f(x)+e^{-ax}f'(x)=
+      -a e^{-ax}f(x)+e^{-ax}f'(x)=e^{-ax}\left( -af(x)+f'(x)\right)=0$ car $f$ est solution de $y'=ay$.
+
+      On en déduit donc que $g'(x)=0$ et par conséquent que la fonction $g$ est constante, soit $e^{-ax}f(x)=C$.
+
+      On en conclut que pour tout réel $x$, $f(x)=\dfrac{C}{e^{-ax}}=Ce^{ax}$.
+      \findemo{}
+    \end{demonstrationp}
+
+    \begin{example}{}{}
+    Les solutions de l'équation différentielle $y'=7y$ sont les fonctions de la forme $x\mapsto Ce^{7x}$, avec $C\in\R$.
+    \end{example}
+
+    \begin{exercices}{}{}
+37--43 p.305, 106--109 p.308, 110--114 p.309
+    \end{exercices}
+
+    \begin{theoreme}{}{}
+      Soient $a$ et $b$ deux réels non nuls.
+
+      Les solutions de l'équation différentielle $y'=ay+b$ sont les fonctions de la forme 
+      $x \mapsto Ce^{ax}-\dfrac{b}{a}$, avec $C\in\R$.
+    \end{theoreme}
+
+    \begin{remark}{}{}
+    La fonction $x\mapsto -\dfrac{b}{a}$ s'appelle la solution particulière constante de l'équation différentielle $y'=ay+b$.
+    \end{remark}
+
+    \begin{example}{}{}
+      On considère l'équation différentielle $(E) y'=5y-3$. On a alors $a=5$ et $b=-3$.
+
+      Les solutions de l'équation $(E)$ sont donc les fonctions $f$ définies sur $\R$ par $f(x)=Ce^{5x}+\dfrac{3}{5}$.
+    \end{example}
+
+
+    \begin{theoreme}{}{}
+      Soient $x_0$ et $k$ deux réels fixés.
+
+      Il existe une unique solution de l'équation différentielle $(E) y'=ay+b$ vérifiant la condition initiale $y(x_0)=k$.
+    \end{theoreme}
+
+    \begin{exercices}{}{}
+   45--46 p.305, 115--118 p.309, 119--123 p.310
+    \end{exercices}
+
+
+    \begin{theoreme}{(Admise)}{}
+      Soit $a$ un réel et $f$ une fonction définie sur un intervalle $I$.
+
+      Soient $(E):y'=ay+f$ et $g$ une solution particulière de l'équation différentielle $(E)$ sur $I$.
+
+      Alors, les solutions de $(E)$ sur $I$ sont les fonctions de la forme $f_k : x\longmapsto ke^{ax}+g(x)$, avec $k\in\R$.
+    \end{theoreme}
+
+    \begin{exercices}{}{}
+      124--129 p.311, 131 p.311
+      \end{exercices}
+      \begin{exercices}{}{}
+      141--149 p.313, 163 p.317
+      \end{exercices}
+\end{document}
