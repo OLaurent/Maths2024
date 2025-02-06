@@ -585,9 +585,7 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
   \end{center}
       
   \end{exercice}
-  
-  \medskip
-  \begin{exercice}{}{}
+    \begin{exercice}{}{}
   
     $200$ salariés d'une entreprise sont répartis suivant trois catégories: ouvriers, techniciens et cadres. L'entreprise 
     compte $120$ femmes selon la répartition suivante:
@@ -658,7 +656,6 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
         c.& $8\%$ &
         d.& $13\%$\\
       \end{tabularx}
-      \pagebreak
    
       \item Une quantité qui a subi une hausse de $10\%$ puis une baisse de $50\%$ a ...
     
@@ -1158,6 +1155,76 @@ Dans un repère orthonormé du plan, on considère les points $A(4;1)$, $B(0;4)$
       \end{enumerate}
             
 
+    \end{exercice}
+  \pagebreak
+
+
+
+  \begin{center}
+      {\scshape\LARGE Révisions Thème 6 - Vecteurs et coordonnées\par}
+      \vspace{0.5cm}
+    \end{center}
+  
+    \setcounter{exercice}{0}
+
+
+\begin{methode*}[sidebyside, righthand width=2.2cm,segmentation code={}, sidebyside align=top]{Démontrer un alignement $\longrightarrow$ Exercices 1, 2}{}
+Soient les points $A(-2; 3)$, $B(1; 1)$ et $C(4; -1)$. Montrer que les points $A$, $B$ et $C$ sont alignés.
+
+  \begin{itemize}
+    \item On commence par calculer les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$.
+    
+    $\Vecteur{AB}\CoordVecPl{x_B-x_A}{y_B-y_A}$ soit $\Vecteur{AB}\CoordVecPl{1-(-2)}{1-3}$ soit $\Vecteur{AB}\CoordVecPl{3}{-2}$.
+
+    $\Vecteur{AC}\CoordVecPl{x_C-x_A}{y_C-y_A}$ soit $\Vecteur{AC}\CoordVecPl{4-(-2)}{-1-3}$ soit $\Vecteur{AC}\CoordVecPl{6}{-4}$.
+
+    \item On vérifie que les vecteurs $\Vecteur{AB}$ et $\Vecteur{AC}$ sont colinéaires en le déterminant des deux vecteurs.
+    
+    $\det(\Vecteur{AB},\Vecteur{AC})=\begin{vmatrix} 3 & 6 \\ -2 & -4 \end{vmatrix} = 3\times(-4)-6\times(-2)=0$.
+
+    \item On en déduit que les points $A$, $B$ et $C$ sont alignés car le déterminant est nul.
+
+  \end{itemize}
+  
+  \tcblower
+  
+  \vspace{3cm}
+  \SimpleQRCode{https://www.youtube.com/watch?v=dZ81uKVDGpE}{1.2cm}
+
+
+\end{methode*}
+
+
+    \begin{exercice}{}{}
+      On se place dans un repère $\RepereOij$.
+
+      Soient les points $A(-\dfrac{7}{2}; 2)$, $B(-2; \dfrac{13}{2})$, $C(5; \dfrac{13}{2})$, $D(3; \dfrac{5}{2})$.
+      
+      \begin{enumerate}
+          \item Déterminer les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$.
+          \item En déduire que le quadrilatère $ABCD$ est un trapèze.
+          \item On définit le point $I$ par l'égalité : $\Vecteur{IA} = \dfrac{3}{4} \Vecteur{ID}$.
+          Montrer que les coordonnées de $I$ sont $(-23; \dfrac{1}{2})$.
+          \item Les points $I$, $B$ et $C$ sont-ils alignés ?
+          \item $J$ et $K$ étant les milieux respectifs de $[AB]$ et $[CD]$, déterminer les coordonnées de $J$ et $K$.
+          Démontrer alors que les points $I$, $J$ et $K$ sont alignés.
+      \end{enumerate}
+    \end{exercice}
+
+    \begin{exercice}{}{}
+      ABC est un triangle.
+
+      \begin{enumerate}
+          \item Placer les points $H$ et $G$ vérifiant les relations suivantes :
+          $$ \Vecteur{AH} = -\dfrac{3}{4} \Vecteur{AB} + \dfrac{1}{2} \Vecteur{AC} \quad \text{et} \quad \Vecteur{BG} = -\dfrac{7}{4} \Vecteur{AB} + \dfrac{3}{2} \Vecteur{BC} $$
+          \item On se place dans le repère $(A ; \Vecteur{AB}, \Vecteur{AC})$.
+          \begin{enumerate}
+              \item Donner les coordonnées des points $A$, $B$ et $C$ dans ce repère.
+              \item Déterminer les coordonnées des points $H$ et $G$ dans ce repère.
+          \end{enumerate}
+          \item Les points $A$, $G$ et $H$ sont-ils alignés ?
+      \end{enumerate}
+      
     \end{exercice}
   \pagebreak
   
@@ -2141,5 +2208,208 @@ Par conséquent, les solutions sont $0$ et $4$.
 
     \end{enumerate}
     \end{exercice}
+
+    \pagebreak
+
+
+
+  \begin{center}
+    {\scshape\LARGE Révisions Thème 6 - Vecteurs et coordonnées - Corrigé\par}
+    \vspace{0.5cm}
+  \end{center}
+
+  \setcounter{exercice}{0}
+
+  \begin{exercice}{}{}
+    \begin{enumerate}
+      \item On calcule les coordonnées des vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$ :
+      
+      $\Vecteur{AB}\CoordVecPl{x_B-x_A}{y_B-y_A}$ soit $\Vecteur{AB}\CoordVecPl{-2+\dfrac{7}{2}}{5-2}$ soit $\Vecteur{AB}\CoordVecPl{\dfrac{3}{2}}{3}$.
+
+      $\Vecteur{CD}\CoordVecPl{x_D-x_C}{y_D-y_C}$ soit $\Vecteur{CD}\CoordVecPl{3-5}{\dfrac{5}{2}-\dfrac{13}{2}}$ soit $\Vecteur{CD}\CoordVecPl{-2}{-4}$.
+
+      \item On calcule le déterminant des vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$ :
+      
+      $det(\Vecteur{AB},\Vecteur{CD})=\begin{vmatrix}
+        \dfrac{3}{2} & -2\\
+        3 & -4
+      \end{vmatrix} = \dfrac{3}{2} \times (-4) - (-2) \times 3 = -6 + 6 = 0$.
+
+      On en déduit que les vecteurs $\Vecteur{AB}$ et $\Vecteur{CD}$ sont colinéaires, donc que $(AB)$ et $(CD)$ sont parallèles. En conclusion, $ABCD$ est un trapèze.
+
+      \item Soient $I(x_I;y_I)$ les coordonnées du point $I$.
+      
+      On a $\Vecteur{IA}\CoordVecPl{x_A-x_I}{y_A-y_I}$ et $\Vecteur{ID}\CoordVecPl{x_D-x_I}{y_D-y_I}$, soit $\Vecteur{IA}\CoordVecPl{-\dfrac{7}{2}-x_I}{2-y_I}$ et $\Vecteur{ID}\CoordVecPl{3-x_I}{\dfrac{5}{2}-y_I}$.
+      
+      
+      On en déduit:
+      $$\Vecteur{IA} = \dfrac{3}{4} \Vecteur{ID} \iff \begin{cases}
+        -\dfrac{7}{2}-x_I = \dfrac{3}{4} \times (3-x_I)\\
+        2-y_I = \dfrac{3}{4} \times \left(\dfrac{5}{2}-y_I\right)
+      \end{cases} \iff \begin{cases}
+        -\dfrac{7}{2}-x_I = \dfrac{9}{4}-\dfrac{3}{4}x_I\\
+        2-y_I = \dfrac{15}{8}-\dfrac{3}{4}y_I
+      \end{cases} \iff \begin{cases}
+        \dfrac{3}{4}x_I-x_I=\dfrac{9}{4}+\dfrac{7}{2}\\
+        \dfrac{3}{4}y_I-y_I=\dfrac{15}{8}-2
+      \end{cases} $$
+      
+      $$\iff \begin{cases}
+        \dfrac{-1}{4}x_I=\dfrac{23}{4}\\
+        \dfrac{-1}{4}y_I=\dfrac{7}{8}
+      \end{cases} \iff \begin{cases}
+        x_I=-23\\
+        y_I=\dfrac{1}{2}
+      \end{cases}$$
+
+      Les coordonnées de $I$ sont donc $(-23;\dfrac{1}{2})$.
+
+
+
+      \item On cherche à savoir si les points $I$, $B$ et $C$ sont alignés. Pour cela, on calcule le déterminant des vecteurs $\Vecteur{IB}$ et $\Vecteur{IC}$.
+      
+      $\Vecteur{IB}\CoordVecPl{x_B-x_I}{y_B-y_I}$ soit $\Vecteur{IB}\CoordVecPl{-2+23}{5-\dfrac{1}{2}}$ soit $\Vecteur{IB}\CoordVecPl{21}{\dfrac{9}{2}}$.
+
+      $\Vecteur{IC}\CoordVecPl{x_C-x_I}{y_C-y_I}$ soit $\Vecteur{IC}\CoordVecPl{5+23}{\dfrac{13}{2}-\dfrac{1}{2}}$ soit $\Vecteur{IC}\CoordVecPl{28}{6}$.
+
+      On calcule le déterminant des vecteurs $\Vecteur{IB}$ et $\Vecteur{IC}$ :
+
+      $det(\Vecteur{IB},\Vecteur{IC})=\begin{vmatrix}
+        21 & 28\\
+        \dfrac{9}{2} & 6
+      \end{vmatrix} = 21 \times 6 - 28 \times \dfrac{9}{2} = 126 - 126 = 0$.
+
+      On en déduit que les vecteurs $\Vecteur{IB}$ et $\Vecteur{IC}$ sont colinéaires, donc que les points $I$, $B$ et $C$ sont alignés.
+
+      \item On cherche les coordonnées des milieux $J$ et $K$ des segments $[AB]$ et $[CD]$.
+      
+      $J\CoordPtPl{\dfrac{x_A+x_B}{2}}{\dfrac{y_A+y_B}{2}}$ soit $J\CoordPtPl{\dfrac{-7/2-2}{2}}{\dfrac{2+5}{2}}$ soit $J\CoordPtPl{-\dfrac{11}{4}}{\dfrac{7}{2}}$.
+
+      $K\CoordPtPl{\dfrac{x_C+x_D}{2}}{\dfrac{y_C+y_D}{2}}$ soit $K\CoordPtPl{\dfrac{5+3}{2}}{\dfrac{13/2+5/2}{2}}$ soit $K\CoordPtPl{4}{\dfrac{9}{2}}$.
+
+      On calcule le déterminant des vecteurs $\Vecteur{IJ}$ et $\Vecteur{IK}$.
+
+      $\Vecteur{IJ}\CoordVecPl{x_J-x_I}{y_J-y_I}$ soit $\Vecteur{IJ}\CoordVecPl{-\dfrac{11}{4}+23}{\dfrac{7}{2}-\dfrac{1}{2}}$ soit $\Vecteur{IJ}\CoordVecPl{\dfrac{81}{4}}{3}$.  
+
+      $\Vecteur{IK}\CoordVecPl{x_K-x_I}{y_K-y_I}$ soit $\Vecteur{IK}\CoordVecPl{4+23}{\dfrac{9}{2}-\dfrac{1}{2}}$ soit $\Vecteur{IK}\CoordVecPl{27}{4}$.
+
+      On a donc : 
+      
+      $det(\Vecteur{IJ},\Vecteur{IK})=\begin{vmatrix}
+        \dfrac{81}{4} & 27\\
+        3 & 4
+      \end{vmatrix} = \dfrac{81}{4} \times 4 - 27 \times 3 = 81 - 81 = 0$.
+
+      Les vecteurs $\Vecteur{IJ}$ et $\Vecteur{IK}$ sont colinéaires, donc les points $I$, $J$ et $K$ sont alignés.
+
+
+    \end{enumerate}
+  \end{exercice}
+
+  \begin{exercice}{}{}
+    ABC est un triangle.
+
+    \begin{enumerate}
+        \item Placer les points $H$ et $G$ vérifiant les relations suivantes :
+        $$ \Vecteur{AH} = -\dfrac{3}{4} \Vecteur{AB} + \dfrac{1}{2} \Vecteur{AC} \quad \text{et} \quad \Vecteur{BG} = -\dfrac{7}{4} \Vecteur{AB} + \dfrac{3}{2} \Vecteur{BC} $$
+        \item On se place dans le repère $(A ; \Vecteur{AB}, \Vecteur{AC})$.
+        \begin{enumerate}
+            \item Donner les coordonnées des points $A$, $B$ et $C$ dans ce repère.
+            \item Déterminer les coordonnées des points $H$ et $G$ dans ce repère.
+        \end{enumerate}
+        \item Les points $A$, $G$ et $H$ sont-ils alignés ?
+    \end{enumerate}
+    
+    \begin{enumerate}
+      \item On réalise une figure : 
+
+      \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+          % Points
+          \coordinate (A) at (0,0);
+          \coordinate (B) at (4,0);
+          \coordinate (C) at (3,3);
+          \coordinate (H) at (-1.5,1.5);
+          \coordinate (G) at (-4.5,4.5);
+
+          % Triangle ABC
+          \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+
+
+          \draw[thick,->,blue] (A) -- (-3,0) node[midway, below] {$-\dfrac{3}{4}\overrightarrow{AB}$};
+          \draw[thick,->,blue] (-3,0) -- (-1.5, 1.5 ) node[midway, above left] {$\dfrac{1}{2}\overrightarrow{AC}$};
+
+          \draw[thick,->,red] (B) -- (-3,0) node[midway, below] {$-\dfrac{7}{4}\overrightarrow{AB}$};
+          \draw[thick,->,red] (-3,0) -- (-4.5, 4.5 ) node[midway, left] {$\dfrac{3}{2}\overrightarrow{AC}$};
+
+          % Points H and G
+          \draw[thick,->,blue] (A) -- (H) node[midway, above right] {$\overrightarrow{AH}$};
+          \draw[thick,->,red] (B) -- (G) node[midway, above right] {$\overrightarrow{BG}$};
+
+          % Points labels
+          \node[below left] at (A) {$A$};
+          \node[below right] at (B) {$B$};
+          \node[above] at (C) {$C$};
+          \node[above right] at (H) {$H$};
+          \node[above right] at (G) {$G$};
+        \end{tikzpicture}
+      \end{center}
+
+      \item \begin{enumerate}
+        \item Les coordonnées des points $A$, $B$ et $C$ dans le repère $(A ; \Vecteur{AB}, \Vecteur{AC})$ sont respectivement $(0 ; 0)$, $(1 ; 0)$ et $( 0; 1)$.
+        \item 
+        \underline{Calcul des coordonnées de $H$}:
+
+                
+        On a $\Vecteur{AH}= -\dfrac{3}{4} \Vecteur{AB} + \dfrac{1}{2} \Vecteur{AC}$.
+        
+        On a $\Vecteur{AB}\CoordVecPl{1}{0}$ donc $-\dfrac{3}{4} \Vecteur{AB}\CoordVecPl{-\dfrac{3}{4}}{0}$. De même, $\Vecteur{AC}\CoordVecPl{0}{1}$ donc $\dfrac{1}{2} \Vecteur{AC}\CoordVecPl{0}{\dfrac{1}{2}}$.
+
+        On en déduit que $\Vecteur{AH}\CoordVecPl{-\dfrac{3}{4}+0}{0+\dfrac{1}{2}}$ soit $\Vecteur{AH}\CoordVecPl{-\dfrac{3}{4}}{\dfrac{1}{2}}$.
+
+         Les coordonnées de $H$ dans le repère $(A ; \Vecteur{AB}, \Vecteur{AC})$ sont donc $(-\dfrac{3}{4} ; \dfrac{1}{2})$, car $A$ est l'origine du repère.
+
+
+
+        \underline{Calcul des coordonnées de $G$}:
+      On a $\Vecteur{BG}= -\dfrac{7}{4} \Vecteur{AB} + \dfrac{3}{2} \Vecteur{BC}$.
+
+        $\Vecteur{AB}\CoordVecPl{1}{0}$ donc $-\dfrac{7}{4} \Vecteur{AB}\CoordVecPl{-\dfrac{7}{4}}{0}$, et $\Vecteur{BC}\CoordVecPl{-1}{1}$ donc $\dfrac{3}{2} \Vecteur{BC}\CoordVecPl{-\dfrac{3}{2}}{\dfrac{3}{2}}$.
+
+        Les coordonnée de $\Vecteur{BG}$ sont donc $\Vecteur{BG}\CoordVecPl{-\dfrac{7}{4}-\dfrac{3}{2}}{0+\dfrac{3}{2}}$ soit $\Vecteur{BG}\CoordVecPl{-\dfrac{13}{4}}{\dfrac{3}{2}}$.
+
+        Or, les coordonnées de $\Vecteur{BG}$ sont $\CoordVecPl{x_G-1}{y_G-0}$, donc on en déduit le système suivant :
+        $$\begin{cases}
+          x_G-1=-\dfrac{13}{4}\\
+          y_G-0=\dfrac{3}{2}
+        \end{cases} \iff \begin{cases}
+          x_G=-\dfrac{13}{4}+1\\
+          y_G=\dfrac{3}{2}
+        \end{cases}\iff \begin{cases}
+          x_G=-\dfrac{9}{4}\\
+          y_G=\dfrac{3}{2}
+        \end{cases}$$
+
+        Les coordonnées de $G$ dans le repère $(A ; \Vecteur{AB}, \Vecteur{AC})$ sont donc $(-\dfrac{9}{4} ; \dfrac{3}{2})$.
+
+      \end{enumerate}
+      \item Les points $A$, $G$ et $H$ sont alignés si et seulement si les vecteurs $\Vecteur{AG}$ et $\Vecteur{AH}$ sont colinéaires.
+      
+      On a $\Vecteur{AG}\CoordVecPl{x_G-x_A}{y_G-y_A}$ soit $\Vecteur{AG}\CoordVecPl{-\dfrac{9}{4}-0}{\dfrac{3}{2}-0}$ soit $\Vecteur{AG}\CoordVecPl{-\dfrac{9}{4}}{\dfrac{3}{2}}$.
+
+      On a $\Vecteur{AH}\CoordVecPl{x_H-x_A}{y_H-y_A}$ soit $\Vecteur{AH}\CoordVecPl{-\dfrac{3}{4}-0}{\dfrac{1}{2}-0}$ soit $\Vecteur{AH}\CoordVecPl{-\dfrac{3}{4}}{\dfrac{1}{2}}$.
+
+      On calcule le déterminant des vecteurs $\Vecteur{AG}$ et $\Vecteur{AH}$ :
+
+      $det(\Vecteur{AG},\Vecteur{AH})=\begin{vmatrix}
+        -\dfrac{9}{4} & -\dfrac{3}{4}\\
+        \dfrac{3}{2} & \dfrac{1}{2}
+      \end{vmatrix} = -\dfrac{9}{4} \times \dfrac{1}{2} - (-\dfrac{3}{4}) \times \dfrac{3}{2} = -\dfrac{9}{8} + \dfrac{9}{8} = 0$.
+
+      Les vecteurs $\Vecteur{AG}$ et $\Vecteur{AH}$ sont colinéaires, donc les points $A$, $G$ et $H$ sont alignés.
+
+    \end{enumerate}
+  \end{exercice}
 \end{document}
         

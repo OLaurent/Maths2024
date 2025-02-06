@@ -139,11 +139,11 @@ En notant $k$ cette constante, on a $\forall x \in I, F(x)-G(x)=k$ soit $F(x)=G(
   Les primitives de $f$ sont de la forme par $F_k(x)=3x^2+k$, avec $k\in\R$.
 \end{example*}
 
-\begin{propriete*}{}{}
+\begin{proprieteadm*}{}{}
 Soit $f$ une fonction continue sur un intervalle $I$.
 
 Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$ de $f$ sur $I$ telle que $F(x_0)=y_0$.
-\end{propriete*}
+\end{proprieteadm*}
 
 \begin{exercices}{}{}
 54--59 p.306
@@ -152,7 +152,7 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
 \section{Primitives des fonctions usuelles}
 
 
-\begin{propriete}{}{}
+\begin{proprieteadm*}{}{}
   \begin{center}
     \renewcommand\arraystretch{2}
     \begin{tabular}{|c|c|c|}
@@ -173,13 +173,13 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
        \hline     
   \end{tabular}
   \end{center}
-\end{propriete}
+\end{proprieteadm*}
 
 \begin{exercices}{}{}
   69--71 p.307,  73-80 p.307
 \end{exercices}
 
-\begin{propriete}{}{}
+\begin{proprieteadm*}{}{}
   Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$, $k$ un réel quelconque, $n$ un entier différent de $0$ et $-1$, et $u$ une fonction dérivable sur $I$.
   \begin{itemize}[label=\textbullet]
     \item Une primitive de $kf$ est $kF$, avec $F$ une primitive de $f$
@@ -189,7 +189,7 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
     \item Une primitive de $\dfrac{u'}{\sqrt{u}}$ est $2\sqrt{u}$, si $u$ est strictement positive sur $I$.
     \item Une primitive de $\dfrac{u'}{u}$ est $ln(u)$, si $u$ est strictement positive sur $I$.
   \end{itemize} 
-\end{propriete}
+\end{proprieteadm*}
 
 \begin{exercices}{}{}
   81--86 p.307, 90--97 p.308, 102--103 p.308, 133--136 p.312, 138--139 p.313
@@ -199,7 +199,7 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
 \pagebreak
 
 \section{Equations différentielles $y'=ay$ et $y'=ay+b$}
-    \begin{theoreme}{}{}
+    \begin{theoreme*}{}{}
     Soit $a$ un nombre réel.
 
     Les fonctions solutions de l'équation différentielle $y'=ay$ sont les fonctions $x\mapsto Ce^{ax}$, où 
@@ -207,9 +207,9 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
 
     Si, de plus, pour deux réels $x_0$ et $k$ donnés, $y(x_0)=k$, alors la fonction 
     définie sur $\R$ par $x \mapsto ke^{a(x-x_0)}$ est l'unique fonction solution de l'équation différentielle $y'=ay$.
-    \end{theoreme}
+    \end{theoreme*}
 
-    \begin{demonstrationp}{}{}
+    \begin{demonstrationp*}{}{}
       Soit $C$ un réel. Les fonctions définies par $f(x)=Ce^{ax}$ vérifient bien l'équation différentielle: en effet,
       $f'(x)=C\times a e^{ax}=a\times Ce^{ax}=af(x)$.
 
@@ -222,7 +222,7 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
 
       On en conclut que pour tout réel $x$, $f(x)=\dfrac{C}{e^{-ax}}=Ce^{ax}$.
       \findemo{}
-    \end{demonstrationp}
+    \end{demonstrationp*}
 
     \begin{example}{}{}
     Les solutions de l'équation différentielle $y'=7y$ sont les fonctions de la forme $x\mapsto Ce^{7x}$, avec $C\in\R$.
@@ -232,12 +232,12 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
 37--43 p.305, 106--109 p.308, 110--114 p.309
     \end{exercices}
 
-    \begin{theoreme}{}{}
+    \begin{theoreme*}{}{}
       Soient $a$ et $b$ deux réels non nuls.
 
       Les solutions de l'équation différentielle $y'=ay+b$ sont les fonctions de la forme 
       $x \mapsto Ce^{ax}-\dfrac{b}{a}$, avec $C\in\R$.
-    \end{theoreme}
+    \end{theoreme*}
 
     \begin{remark}{}{}
     La fonction $x\mapsto -\dfrac{b}{a}$ s'appelle la solution particulière constante de l'équation différentielle $y'=ay+b$.
@@ -250,24 +250,24 @@ Quels que soient $x_0 \in I$ et $y_0 \in \R$, il existe une unique primitive $F$
     \end{example}
 
 
-    \begin{theoreme}{}{}
+    \begin{theoreme*}{}{}
       Soient $x_0$ et $k$ deux réels fixés.
 
       Il existe une unique solution de l'équation différentielle $(E) y'=ay+b$ vérifiant la condition initiale $y(x_0)=k$.
-    \end{theoreme}
+    \end{theoreme*}
 
     \begin{exercices}{}{}
    45--46 p.305, 115--118 p.309, 119--123 p.310
     \end{exercices}
 
 
-    \begin{theoreme}{(Admise)}{}
+    \begin{theoremeadm*}{}{}
       Soit $a$ un réel et $f$ une fonction définie sur un intervalle $I$.
 
       Soient $(E):y'=ay+f$ et $g$ une solution particulière de l'équation différentielle $(E)$ sur $I$.
 
       Alors, les solutions de $(E)$ sur $I$ sont les fonctions de la forme $f_k : x\longmapsto ke^{ax}+g(x)$, avec $k\in\R$.
-    \end{theoreme}
+    \end{theoremeadm*}
 
     \begin{exercices}{}{}
       124--129 p.311, 131 p.311
